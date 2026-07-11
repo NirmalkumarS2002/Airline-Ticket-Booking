@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Airline Ticket Booking Home-Page</title>
 
-
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,-50..200" />
 
@@ -25,6 +24,229 @@
     <link rel="stylesheet" href="style.css">
 
 </head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html,
+    body {
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+    }
+
+    .hero-section {
+        min-height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 50px;
+        padding: 120px 50px;
+
+        background: linear-gradient(125deg, rgba(0, 0, 0, 0.514), rgba(0, 0, 0, 0.63)), url("./src/hero-bg5.webp");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top center;
+
+    }
+
+    .hero-tag {
+        border: 1px solid white;
+        border-radius: 20px;
+        width: fit-content;
+        margin-bottom: 20px;
+    }
+
+    .hero-tag p {
+        color: white;
+        font-size: clamp(13px, 1.4vw, 14px);
+        padding: clamp(4px, 0.5vw, 6px) 20px;
+    }
+
+    .hero-text {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 60px;
+    }
+
+    .hero-text h1 {
+        font-size: clamp(30px, 5vw, 70px);
+        color: white;
+        max-width: 700px;
+        margin-bottom: 20px;
+    }
+
+    .hero-text p {
+        font-size: clamp(15px, 1.7vw, 18px);
+        max-width: 600px;
+        color: white;
+        line-height: 1.5;
+    }
+
+    .hero-bottom {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+     
+    }
+
+    .hero-cards {
+        display: flex;
+        gap: 10px;
+
+    }
+
+    .herocard {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        border: 1px solid white;
+        padding: 10px;
+        border-radius: 7px;
+        width: 100%;
+        min-width: 180px;
+
+
+    }
+
+    .herocard span {
+        font-size: 70px;
+        color: white;
+    }
+
+    .herocard h1 {
+        font-size: 23px;
+        color: white;
+    }
+
+    .herocard p {
+        color: white;
+        font-size: 15px;
+        line-height: 1.5;
+
+    }
+
+    .hero-play {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .start-booking {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .start-booking p {
+        color: white;
+        font-size: 16px;
+        max-width: 300px;
+        line-height: 1.5;
+    }
+
+    .start-booking a {
+        text-decoration: none;
+        color: white;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .video-tag {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .video-tag a {
+        text-decoration: none;
+        min-height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        border: 1px solid white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .video-btn span {
+        font-size: 40px;
+        color: white;
+    }
+
+    @media (max-width:1000px) {
+
+        .hero-text {
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            text-align: center;
+        }
+
+        .hero-text p {
+            text-align: center;
+        }
+
+        .hero-section {
+            align-items: center;
+            padding: 100px 15px;
+        }
+
+        .hero-bottom {
+            grid-template-columns: 1fr;
+            width: 90%;
+        }
+
+        .hero-cards {
+            justify-content: center;
+        }
+
+        .herocard {
+            width: 100%;
+        }
+
+        .hero-play {
+            justify-content: space-between;
+        }
+    }
+
+    @media (max-width:720px) {
+
+        .hero-section {
+            gap: 0px;
+        }
+
+        .hero-cards {
+            flex-direction: column;
+            justify-content: center;
+        }
+
+         .herocard p{
+            max-width: 100%;
+         }
+
+        .hero-play {
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .start-booking {
+            align-items: center;
+            gap: 20px;
+        }
+
+        .start-booking p {
+            max-width: 100%;
+            text-align: center;
+        }
+    }
+</style>
 
 <body>
 
@@ -55,13 +277,72 @@
             <a href="login.html"><span class="material-symbols-outlined">person</span></a>
 
             <button class="book-btn errorpage">Book Now <span class="material-symbols-outlined">
-                travel</span></button>
+                    travel</span></button>
 
             <span class="material-symbols-outlined menu-btn">menu</span>
 
         </div>
 
     </header>
+
+    <section class="hero-section">
+
+        <div class="hero-text">
+            <div class="hero-tag">
+                <p>Welcome to Stackly</p>
+            </div>
+
+            <h1>
+                Explore the World with Stackly
+                Airline
+            </h1>
+
+            <p>
+                Book flights to destinations around the world with comfort and confidence.Find the best fares and enjoy
+                a seamless travel experience.
+            </p>
+        </div>
+
+        <div class="hero-bottom">
+
+            <div class="hero-cards">
+                <div class="herocard">
+                    <span class="material-symbols-outlined">airplane_ticket</span>
+                    <h1>Easy Booking</h1>
+                    <p>Book domestic and international flights in just a few clicks.</p>
+                </div>
+
+                <div class="herocard">
+                    <span class="material-symbols-outlined">airline_stops</span>
+                    <h1>Global Routes</h1>
+                    <p>Explore hundreds of destinations with seamless connections.</p>
+                </div>
+
+                <div class="herocard">
+                    <span class="material-symbols-outlined">seat_window</span>
+                    <h1>Premium Comfort</h1>
+                    <p>Enjoy comfortable seating and world-class onboard services.</p>
+                </div>
+            </div>
+
+            <div class="hero-play">
+                <div class="start-booking">
+                    <p>Your journey begins with the perfect flight.
+                        Search, compare, and book tickets in just a few clicks.</p>
+
+                    <a href="404.html">Start booking <span class="material-symbols-outlined">arrow_right_alt
+                        </span></a>
+                </div>
+
+                <div class="video-tag">
+
+                    <a href="404.html" class="video-btn"><span class="material-symbols-outlined">arrow_back_2</span></a>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
 
     <script src="script.js"></script>
 </body>
