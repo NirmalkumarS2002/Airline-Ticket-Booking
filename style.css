@@ -1,0 +1,203 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Noto Sans", sans-serif;
+}
+
+:root {
+    --pcolor: #603BFE
+}
+
+.header {
+    display: flex;
+    justify-content: space-around;
+    background: red;
+    padding-block: 6px;
+}
+
+.logoimage {
+    display: flex;
+    align-items: center;
+    z-index: 1;
+}
+
+.logoimage img {
+    width: 200px;
+}
+
+.navlinks {
+    display: flex;
+    align-items: center;
+}
+
+.menus {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.menus li {
+    list-style: none;
+}
+
+.menus li a {
+    text-decoration: none;
+    font-size: 16px;
+    color: white;
+}
+
+.menus li a span {
+    margin-left: 5px;
+    color: var(--pcolor);
+    font-size: 20px;
+}
+
+.callus {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.call {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.callicon {
+    font-size: 30px;
+    color: var(--pcolor);
+}
+
+.call div p {
+    font-size: 15px;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.call div a {
+    font-size: 15px;
+    text-decoration: none;
+    color: white;
+}
+
+.callus>a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.callus>a span {
+    font-size: 25px;
+    color: white;
+}
+
+.book-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 30px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: none;
+}
+
+
+.menu-btn {
+    display: none;
+    font-size: 23px;
+    z-index: 1;
+    transition: all .6s ease;
+}
+
+@media (max-width:1100px) {
+
+    .header {
+        justify-content: space-between;
+        padding-inline: 20px;
+    }
+
+    .navlinks {
+        position: absolute;
+        top: 0;
+        left: 0;
+        align-items: flex-start;
+        height: 100vh;
+        width: 320px;
+        background: white;
+        padding: 90px 22px;
+        transition: all .6s ease;
+        transform: translateX(-100%);
+    }
+
+    .navlinks.showmenu {
+        transform: translateX(0);
+    }
+
+    .menus {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        gap: 0;
+
+    }
+
+    .menu-btn {
+        display: block;
+        font-weight: bold;
+    }
+
+    .menus li {
+        width: 100%;
+        padding: 10px;
+        border-bottom: 1px solid rgba(128, 128, 128, 0.623);
+    }
+
+    .menus li:hover {
+        background: var(--pcolor);
+        color: white;
+    }
+
+    .menus li:hover>a {
+        color: white;
+    }
+
+    .menus li a {
+        width: 100%;
+        color: var(--pcolor);
+        font-weight: 600;
+    }
+
+    .menus a span {
+        display: none;
+    }
+
+
+
+}
+
+@media (max-width:720px) {
+
+    .logoimage img {
+        width: 150px;
+    }
+
+    .call {
+        display: none;
+    }
+
+    .book-btn {
+        display: none;
+    }
+
+    .callus {
+        gap: 10px;
+    }
+
+    .callus>a span {
+        font-size: 23px;
+    }
+
+
+}
