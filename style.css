@@ -400,13 +400,14 @@
 }
 
 #footer-email {
-    padding: 13px 10px;
+    padding: 15px 10px;
     width: 100%;
     background: transparent;
-    border: 1px solid var(--hcolor);
-    border-radius: 5px;
+    border: none;
+    border-radius: 9px;
     outline: none;
-    color: white;
+    color: black;
+    background: white;
 }
 
 #footer-email::placeholder{
@@ -419,17 +420,18 @@
 
 .subscribe-btn {
     position: absolute;
-    right: 3px;
+    right: 5px;
     border: none;
-    padding: 11px 10px;
+    padding: 10px 20px;
     top: 50%;
-    background: var(--hcolor);
+    background: black;
     color: white;
     transform: translateY(-50%);
-    border-radius: 5px;
+    border-radius: 8px;
 }
 
 .subscribe-btn:hover {
+    background: var(--hcolor);
     box-shadow: 1px 1px 15px var(--pcolor);
 }
 
