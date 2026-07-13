@@ -1,392 +1,937 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>about page</title>
+    <title>Stackly Airline — About Us</title>
 
-     <link rel="stylesheet"
+    <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="style.css">
 
-    <link rel="stylesheet" href="style.css">
+</head>
 
-    <style>
-    :root {
-        --pcolor: #7B2FF7;
-        --hcolor: #9147FF;
-        --dark: #1F1F1F;
-    }
-
-    .ab-wrap {
-        margin: 10px;
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
         font-family: "Noto Sans", sans-serif;
     }
 
-    .ab-eyebrow {
-        display: inline-flex;
+    html,
+    body {
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+        background: #ffffff;
+    }
+
+    :root {
+        --pcolor: #603BFE;
+        --pcolor1: #7B2FF7;
+        --hcolor: #7B2FF7;
+        --dark: #14121a;
+        --text: #14121a;
+        --gcolor: #6b6b76;
+        --panel: #faf9fc;
+        --line: #ece9f4;
+        --shadow: 0 10px 30px rgba(20, 18, 26, 0.06);
+    }
+
+    section {
+        width: 100%;
+        padding: 100px 50px;
+    }
+
+    .eyebrow {
+        display: flex;
         align-items: center;
-        gap: 8px;
-        color: var(--pcolor);
+        gap: 10px;
+        width: fit-content;
+    }
+
+    .eyebrow .dash {
+        width: 22px;
+        height: 2px;
+        background: var(--hcolor);
+        display: inline-block;
+    }
+
+    .eyebrow p {
+        color: var(--hcolor);
         font-size: 13px;
         font-weight: 700;
-        letter-spacing: 2px;
+        letter-spacing: 1.5px;
         text-transform: uppercase;
-        margin-bottom: 14px;
     }
 
-    .ab-eyebrow::before {
-        content: "";
-        width: 24px;
-        height: 2px;
-        background: var(--pcolor);
-    }
-
-    .ab-heading {
-        font-family: "Outfit", sans-serif;
-        font-weight: 300;
-        font-size: clamp(28px, 4vw, 46px);
-        max-width: 650px;
-        line-height: 1.2;
-    }
-
-    .ab-heading b {
-        font-weight: 600;
-        color: var(--pcolor);
-    }
-
-    .ab-btn {
-        position: relative;
-        display: inline-flex;
-        align-items: center;
+    .sec-head {
+        display: flex;
         justify-content: space-between;
-        padding-left: 30px;
-        width: clamp(190px, 22vw, 230px);
-        border: 1px solid var(--pcolor);
-        border-radius: 10px;
-        background: transparent;
-        color: inherit;
+        align-items: flex-end;
+        gap: 40px;
+        max-width: 1300px;
+        margin: 0 auto 50px;
+    }
+
+    .sec-head-left h2 {
+        font-size: clamp(28px, 3.6vw, 42px);
+        color: var(--text);
+        margin-top: 16px;
+        line-height: 1.15;
+    }
+
+    .sec-head-left h2 span {
+        color: var(--hcolor);
+        font-weight: 800;
+    }
+
+    .sec-head-right {
+        max-width: 340px;
+        text-align: right;
+    }
+
+    .sec-head-right p {
+        color: var(--gcolor);
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .sec-head.centered {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        max-width: 650px;
+    }
+
+    .sec-head.centered .sec-head-right {
+        text-align: center;
+        max-width: 550px;
+    }
+
+    @media (max-width:800px) {
+        .sec-head {
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+        }
+
+        .sec-head-right {
+            text-align: left;
+            max-width: 100%;
+        }
+    }
+
+    /* ===================== 1. ABOUT HERO ===================== */
+
+    .hero-section {
+        background: var(--panel);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 60px;
+        max-width: 1300px;
+        margin: 0 auto;
+    }
+
+    .hero-content .eyebrow {
+        margin-bottom: 18px;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(30px, 4.2vw, 48px);
+        color: var(--text);
+        line-height: 1.2;
+        margin-bottom: 20px;
+    }
+
+    .hero-content h1 span {
+        color: var(--hcolor);
+        font-weight: 800;
+    }
+
+    .hero-content p {
+        color: var(--gcolor);
+        font-size: 16px;
+        line-height: 1.7;
+        max-width: 480px;
+        margin-bottom: 30px;
+    }
+
+    .hero-stats {
+        display: flex;
+        gap: 40px;
+    }
+
+    .hero-stats div h3 {
+        color: var(--text);
+        font-size: 28px;
+        margin-bottom: 4px;
+    }
+
+    .hero-stats div p {
+        color: var(--gcolor);
+        font-size: 13px;
+        margin: 0;
+    }
+
+    .hero-media {
+        position: relative;
+        border-radius: 24px;
         overflow: hidden;
-        cursor: pointer;
-        transition: .8s ease;
-        z-index: 1;
-        text-decoration: none;
+        height: 460px;
+        box-shadow: var(--shadow);
+    }
+
+    .hero-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .hero-badge {
+        position: absolute;
+        bottom: 24px;
+        left: 24px;
+        background: white;
+        border-radius: 14px;
+        padding: 16px 20px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        box-shadow: var(--shadow);
+    }
+
+    .hero-badge span {
+        font-size: 30px;
+        color: var(--hcolor);
+    }
+
+    .hero-badge h4 {
+        color: var(--text);
         font-size: 15px;
     }
 
-    .ab-btn::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 0;
-        height: 100%;
-        background: var(--pcolor);
-        transition: width .4s ease;
-        z-index: -1;
+    .hero-badge p {
+        color: var(--gcolor);
+        font-size: 12px;
     }
 
-    .ab-btn:hover::before { width: 100%; }
+    @media (max-width:1000px) {
+        .hero-section {
+            grid-template-columns: 1fr;
+        }
 
-    .ab-btn span {
-        background: var(--pcolor);
-        padding: 10px;
-        border-radius: 10px;
-        z-index: 2;
-        color: #fff;
+        .hero-media {
+            height: 340px;
+            order: -1;
+        }
     }
 
-    .ab-btn.on-dark { color: #fff; }
-    .ab-btn.on-light { color: var(--dark); }
+    @media (max-width:500px) {
+        .hero-stats {
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+    }
 
-    /* ---------- 1. ABOUT INTRO / STORY ---------- */
-    .ab-hero {
-        padding: 100px 40px;
+    /* ===================== 2. OUR STORY ===================== */
+
+    .story-section {
+        background: white;
+    }
+
+    .story-grid {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 50px;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 60px;
+        max-width: 1300px;
+        margin: 0 auto;
         align-items: center;
     }
-    .ab-hero-img { position: relative; border-radius: 20px; overflow: hidden; height: 480px; }
-    .ab-hero-img img { width: 100%; height: 100%; object-fit: cover; }
-    .ab-hero-badge {
-        position: absolute;
-        bottom: 20px;
-        left: 20px;
-        background: #fff;
-        border-radius: 15px;
-        padding: 20px 25px;
-        display: flex;
-        align-items: center;
-        gap: 15px;
-    }
-    .ab-hero-badge h3 { font-family: "Outfit", sans-serif; font-weight: 600; font-size: 26px; color: var(--pcolor); }
-    .ab-hero-badge p { font-size: 12px; color: #555; max-width: 130px; line-height: 1.4; }
-    .ab-hero-text p { margin: 20px 0 30px; font-size: 14px; line-height: 1.8; color: #555; max-width: 480px; }
-    @media (max-width: 900px) { .ab-hero { grid-template-columns: 1fr; padding: 60px 20px; } .ab-hero-img { height: 320px; } }
 
-    /* ---------- 2. MISSION & VALUES ---------- */
-    .mv-section {
-        background: var(--dark);
-        border-radius: 20px;
-        padding: 80px 40px;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 25px;
+    .story-images {
+        position: relative;
+        height: 420px;
     }
-    .mv-card { border: 1px solid #3a3a3a; border-radius: 20px; padding: 35px 30px; transition: .4s ease; }
-    .mv-card:hover { border-color: var(--pcolor); }
-    .mv-card .material-symbols-outlined { color: var(--pcolor); font-size: 30px; margin-bottom: 18px; }
-    .mv-card h3 { font-family: "Outfit", sans-serif; font-weight: 500; font-size: 19px; color: #fff; margin-bottom: 10px; }
-    .mv-card p { font-size: 13px; line-height: 1.7; color: #bbb; }
-    @media (max-width: 900px) { .mv-section { grid-template-columns: 1fr; padding: 60px 20px; } }
 
-    /* ---------- 3. OUR JOURNEY / TIMELINE ---------- */
-    .ab-journey-section { padding: 100px 40px; }
-    .ab-journey-section .ab-heading { margin: 0 auto 60px; text-align: center; }
-    .ab-journey-track { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; position: relative; }
-    .ab-journey-track::before {
-        content: "";
-        position: absolute;
-        top: 14px;
-        left: 5%;
-        width: 90%;
-        height: 1px;
-        background: #e5e5e5;
-    }
-    .ab-journey-step { position: relative; padding-top: 45px; }
-    .ab-journey-step .dot {
+    .story-img-main {
         position: absolute;
         top: 0;
         left: 0;
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        background: var(--pcolor);
-        color: #fff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-family: "Outfit", sans-serif;
-        font-size: 12px;
-        font-weight: 700;
-    }
-    .ab-journey-step h4 { font-family: "Outfit", sans-serif; font-weight: 600; font-size: 17px; margin-bottom: 8px; }
-    .ab-journey-step p { font-size: 13px; color: #666; line-height: 1.6; }
-    @media (max-width: 900px) {
-        .ab-journey-track { grid-template-columns: 1fr 1fr; }
-        .ab-journey-track::before { display: none; }
-    }
-    @media (max-width: 560px) {
-        .ab-journey-section { padding: 60px 20px; }
-        .ab-journey-track { grid-template-columns: 1fr; }
-    }
-
-    /* ---------- 4. OUR FLEET ---------- */
-    .ab-fleet-section { padding: 20px 40px 100px; }
-    .ab-fleet-section .ab-heading { margin: 0 auto 50px; text-align: center; }
-    .ab-fleet-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr; grid-template-rows: 220px 220px; gap: 20px; }
-    .ab-fleet-item {
-        position: relative;
+        width: 72%;
+        height: 320px;
         border-radius: 20px;
         overflow: hidden;
-        background-size: cover;
-        background-position: center;
+        box-shadow: var(--shadow);
     }
-    .ab-fleet-item:first-child { grid-row: span 2; }
-    .ab-fleet-item .tag {
+
+    .story-img-sub {
         position: absolute;
-        bottom: 18px;
-        left: 18px;
-        background: rgba(31,31,31,0.85);
-        color: #fff;
-        font-size: 13px;
-        padding: 8px 16px;
+        bottom: 0;
+        right: 0;
+        width: 55%;
+        height: 220px;
         border-radius: 20px;
-    }
-    @media (max-width: 900px) {
-        .ab-fleet-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
-        .ab-fleet-item:first-child { grid-row: auto; grid-column: span 2; height: 260px; }
-        .ab-fleet-item { height: 200px; }
-    }
-    @media (max-width: 560px) {
-        .ab-fleet-grid { grid-template-columns: 1fr; }
-        .ab-fleet-item:first-child { grid-column: auto; }
-        .ab-fleet-section { padding: 20px 20px 60px; }
-    }
-
-    /* ---------- 5. LEADERSHIP TEAM ---------- */
-    .ab-team-section { padding: 20px 40px 100px; }
-    .ab-team-section .ab-heading { margin-bottom: 50px; }
-    .ab-team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-    .ab-team-card { border-radius: 20px; overflow: hidden; background: #F7F3F1; }
-    .ab-team-card img { width: 100%; height: 280px; object-fit: cover; }
-    .ab-team-info { padding: 20px; }
-    .ab-team-info h4 { font-family: "Outfit", sans-serif; font-weight: 600; font-size: 16px; }
-    .ab-team-info span { font-size: 12px; color: var(--pcolor); }
-    @media (max-width: 900px) { .ab-team-grid { grid-template-columns: 1fr 1fr; } }
-    @media (max-width: 560px) { .ab-team-section { padding: 20px 20px 60px; } .ab-team-grid { grid-template-columns: 1fr; } }
-
-    /* ---------- 6. WHY FLY WITH US / CTA ---------- */
-    .ab-why-section {
-        border-radius: 20px;
-        margin: 10px 10px 30px;
         overflow: hidden;
-        position: relative;
-        min-height: 480px;
-        display: flex;
+        border: 6px solid white;
+        box-shadow: var(--shadow);
+    }
+
+    .story-images img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .story-text .eyebrow {
+        margin-bottom: 16px;
+    }
+
+    .story-text h2 {
+        font-size: clamp(26px, 3.2vw, 36px);
+        color: var(--text);
+        line-height: 1.2;
+        margin-bottom: 18px;
+    }
+
+    .story-text h2 span {
+        color: var(--hcolor);
+        font-weight: 800;
+    }
+
+    .story-text p {
+        color: var(--gcolor);
+        font-size: 15px;
+        line-height: 1.75;
+        margin-bottom: 16px;
+    }
+
+    @media (max-width:1000px) {
+        .story-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .story-images {
+            height: 360px;
+        }
+    }
+
+    /* ===================== 3. MISSION & VALUES ===================== */
+
+    .values-section {
+        background: var(--panel);
+    }
+
+    .values-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+        max-width: 1300px;
+        margin: 0 auto;
+    }
+
+    .value-card {
+        background: white;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 32px 24px;
+        transition: .5s ease;
+    }
+
+    .value-card:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow);
+        border-color: var(--hcolor);
+    }
+
+    .value-card span {
+        font-size: 40px;
+        color: var(--hcolor);
+        margin-bottom: 18px;
+        display: block;
+    }
+
+    .value-card h3 {
+        color: var(--text);
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .value-card p {
+        color: var(--gcolor);
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    @media (max-width:1000px) {
+        .values-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    @media (max-width:600px) {
+        .values-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    /* ===================== 4. STATS BAND ===================== */
+
+    .stats-section {
+        background: linear-gradient(120deg, var(--pcolor), var(--pcolor1));
+        padding: 70px 50px;
+    }
+
+    .stats-row {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 1300px;
+        margin: 0 auto;
+        gap: 24px;
+    }
+
+    .stat-item {
+        text-align: center;
+        border-right: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    .stat-item:last-child {
+        border-right: none;
+    }
+
+    .stat-item h3 {
+        color: white;
+        font-size: clamp(30px, 3.6vw, 44px);
+        margin-bottom: 6px;
+    }
+
+    .stat-item p {
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 14px;
+    }
+
+    @media (max-width:800px) {
+        .stats-row {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .stat-item:nth-child(2) {
+            border-right: none;
+        }
+
+        .stat-item {
+            padding-bottom: 20px;
+        }
+    }
+
+    /* ===================== 5. LEADERSHIP TEAM ===================== */
+
+    .team-section {
+        background: white;
+    }
+
+    .team-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+        max-width: 1300px;
+        margin: 0 auto;
+    }
+
+    .team-card {
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        overflow: hidden;
+        transition: .5s ease;
+    }
+
+    .team-card:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow);
+    }
+
+    .team-img {
+        height: 260px;
+    }
+
+    .team-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .team-info {
+        padding: 20px;
+    }
+
+    .team-info h3 {
+        color: var(--text);
+        font-size: 17px;
+        margin-bottom: 4px;
+    }
+
+    .team-info p {
+        color: var(--hcolor);
+        font-size: 13px;
+        font-weight: 600;
+    }
+
+    @media (max-width:1000px) {
+        .team-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    @media (max-width:600px) {
+        .team-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    /* ===================== 6. CAREERS CTA ===================== */
+
+    .cta-section {
+        background: var(--panel);
+    }
+
+    .cta-box {
+        max-width: 1300px;
+        margin: 0 auto;
+        background: linear-gradient(120deg, var(--pcolor), var(--pcolor1));
+        border-radius: 24px;
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
         align-items: center;
-        background-image: linear-gradient(90deg, rgba(31,31,31,0.92) 40%, rgba(31,31,31,0.55) 100%), url("https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1400&q=80");
-        background-size: cover;
-        background-position: center;
+        overflow: hidden;
+    }
+
+    .cta-text {
         padding: 60px;
     }
-    .ab-why-content { max-width: 560px; }
-    .ab-why-content .ab-heading { color: #fff; }
-    .ab-why-list { margin: 25px 0 30px; display: flex; flex-direction: column; gap: 14px; }
-    .ab-why-list div { display: flex; align-items: center; gap: 12px; color: #eee; font-size: 14px; }
-    .ab-why-list .material-symbols-outlined { color: var(--pcolor); }
-    @media (max-width: 700px) { .ab-why-section { padding: 40px 25px; min-height: 380px; } }
-</style>
-</head>
 
+    .cta-text p.tag {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        margin-bottom: 14px;
+    }
+
+    .cta-text h2 {
+        color: white;
+        font-size: clamp(26px, 3.4vw, 38px);
+        max-width: 480px;
+        margin-bottom: 16px;
+    }
+
+    .cta-text p.desc {
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 15px;
+        max-width: 460px;
+        line-height: 1.6;
+        margin-bottom: 30px;
+    }
+
+    .cta-btn {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        width: fit-content;
+        padding: 14px 28px;
+        border-radius: 10px;
+        border: none;
+        background: white;
+        color: var(--hcolor);
+        font-size: 15px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: .4s ease;
+    }
+
+    .cta-btn:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+    }
+
+    .cta-img {
+        height: 100%;
+        min-height: 380px;
+    }
+
+    .cta-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    @media (max-width:900px) {
+        .cta-box {
+            grid-template-columns: 1fr;
+        }
+
+        .cta-img {
+            min-height: 240px;
+        }
+
+        .cta-text {
+            padding: 40px 30px;
+        }
+    }
+
+    @media (max-width:720px) {
+        section {
+            padding: 70px 20px;
+        }
+    }
+</style>
 
 <body>
-    <!-- ============================================================
-     SKYFARE AIRLINES — 6 ABOUT PAGE SECTIONS
-     Paste this block between your <header> and <footer>.
-     Same tokens as your SkyFare home page theme:
-       --pcolor: #7B2FF7   --hcolor: #9147FF
-       Dark panels: #1F1F1F   Display font: Outfit   Body font: Noto Sans
-       Buttons reuse the .page-btn sliding-fill style.
-   ============================================================ -->
 
 
+    <header class="header">
+        <a href="index.html" class="logoimage"><img src="./src/logo.webp" alt="Compny Logo"></a>
 
-<!-- ============ 1. ABOUT INTRO / STORY ============ -->
-<section class="ab-wrap ab-hero">
-    <div class="ab-hero-img">
-        <img src="https://images.unsplash.com/photo-1583396618422-597b2755de9c?auto=format&fit=crop&w=1000&q=80" alt="SkyFare aircraft interior">
-        <div class="ab-hero-badge">
-            <h3>15+</h3>
-            <p>Years connecting the world by air</p>
+        <div class="navlinks">
+            <ul class="menus">
+                <li ><a href="index.html">Home</a></li>
+                <li class="show"><a href="about.html" class="active">About Us<span>+</span></a></li>
+                <li><a href="programs.html">Programs<span>+</span></a></li>
+                <li><a href="pages.html">Pages<span>+</span></a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
         </div>
-    </div>
-    <div class="ab-hero-text">
-        <span class="ab-eyebrow">About SkyFare</span>
-        <h2 class="ab-heading">Built for travelers who value <b>time</b> and <b>comfort</b></h2>
-        <p>SkyFare started with a single domestic route and a simple idea: flying shouldn't be complicated or overpriced. Today we connect over 60 cities worldwide, but our approach to fair fares and honest service hasn't changed.</p>
-        <a href="#" class="ab-btn on-light">Explore Routes <span class="material-symbols-outlined">arrow_outward</span></a>
-    </div>
-</section>
 
-<!-- ============ 2. MISSION & VALUES ============ -->
-<section class="ab-wrap mv-section">
-    <div class="mv-card">
-        <span class="material-symbols-outlined">flag</span>
-        <h3>Our Mission</h3>
-        <p>To make air travel simple, transparent and accessible, so more people can go where they need to be.</p>
-    </div>
-    <div class="mv-card">
-        <span class="material-symbols-outlined">shield</span>
-        <h3>Safety First</h3>
-        <p>Every flight is backed by rigorous maintenance standards and a crew trained to the highest safety levels.</p>
-    </div>
-    <div class="mv-card">
-        <span class="material-symbols-outlined">favorite</span>
-        <h3>Customer Care</h3>
-        <p>From booking to boarding, we design every step around a smoother, more human travel experience.</p>
-    </div>
-</section>
+        <div class="callus">
 
-<!-- ============ 3. OUR JOURNEY / TIMELINE ============ -->
-<section class="ab-wrap ab-journey-section">
-    <h2 class="ab-heading">The flight path that brought us <b>here</b></h2>
-    <div class="ab-journey-track">
-        <div class="ab-journey-step">
-            <span class="dot">11</span>
-            <h4>First Route Launched</h4>
-            <p>Started with a single daily flight between two domestic cities.</p>
-        </div>
-        <div class="ab-journey-step">
-            <span class="dot">16</span>
-            <h4>International Expansion</h4>
-            <p>Added our first long-haul routes and business class cabins.</p>
-        </div>
-        <div class="ab-journey-step">
-            <span class="dot">21</span>
-            <h4>Fleet Modernization</h4>
-            <p>Upgraded to a newer, more fuel-efficient aircraft fleet.</p>
-        </div>
-        <div class="ab-journey-step">
-            <span class="dot">26</span>
-            <h4>60+ Cities Connected</h4>
-            <p>Now flying across six continents with daily departures.</p>
-        </div>
-    </div>
-</section>
+            <div class="call">
+                <span class="material-symbols-outlined callicon">add_call</span>
+                <div>
+                    <p>Call Us</p>
+                    <a href="tel:+911234567890">+91 1234567890</a>
+                </div>
+            </div>
 
-<!-- ============ 4. OUR FLEET ============ -->
-<section class="ab-wrap ab-fleet-section">
-    <h2 class="ab-heading">A fleet built for <b>every journey</b></h2>
-    <div class="ab-fleet-grid">
-        <div class="ab-fleet-item" style="background-image:url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=900&q=80')">
-            <span class="tag">Wide-Body Jets</span>
-        </div>
-        <div class="ab-fleet-item" style="background-image:url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=900&q=80')">
-            <span class="tag">Runway Fleet</span>
-        </div>
-        <div class="ab-fleet-item" style="background-image:url('https://images.unsplash.com/photo-1517479149777-5f3b1511d5ad?auto=format&fit=crop&w=900&q=80')">
-            <span class="tag">Business Cabin</span>
-        </div>
-        <div class="ab-fleet-item" style="background-image:url('https://images.unsplash.com/photo-1540339832862-474599807836?auto=format&fit=crop&w=900&q=80')">
-            <span class="tag">Economy Cabin</span>
-        </div>
-        <div class="ab-fleet-item" style="background-image:url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=900&q=80')">
-            <span class="tag">Ground Operations</span>
-        </div>
-    </div>
-</section>
+            <a href="404.html"> <span class="material-symbols-outlined">search</span></a>
+            <a href="login.html"><span class="material-symbols-outlined">person</span></a>
 
-<!-- ============ 5. LEADERSHIP TEAM ============ -->
-<section class="ab-wrap ab-team-section">
-    <span class="ab-eyebrow">Leadership</span>
-    <h2 class="ab-heading">The people steering <b>SkyFare</b> forward</h2>
-    <div class="ab-team-grid">
-        <div class="ab-team-card">
-            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=500&q=80" alt="Team member">
-            <div class="ab-team-info"><h4>Daniel Reyes</h4><span>Chief Executive Officer</span></div>
-        </div>
-        <div class="ab-team-card">
-            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=500&q=80" alt="Team member">
-            <div class="ab-team-info"><h4>Sarah Whitman</h4><span>Chief Operations Officer</span></div>
-        </div>
-        <div class="ab-team-card">
-            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=500&q=80" alt="Team member">
-            <div class="ab-team-info"><h4>Priya Nair</h4><span>Head of Flight Operations</span></div>
-        </div>
-        <div class="ab-team-card">
-            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=500&q=80" alt="Team member">
-            <div class="ab-team-info"><h4>James Okafor</h4><span>Head of Customer Experience</span></div>
-        </div>
-    </div>
-</section>
+            <button class="book-btn errorpage">Book Now <span class="material-symbols-outlined">
+                    travel</span></button>
 
-<!-- ============ 6. WHY FLY WITH US / CTA ============ -->
-<section class="ab-why-section">
-    <div class="ab-why-content">
-        <span class="ab-eyebrow">Why Fly With Us</span>
-        <h2 class="ab-heading">Every flight handled with <b>full care</b></h2>
-        <div class="ab-why-list">
-            <div><span class="material-symbols-outlined">verified</span> Certified fleet with top safety ratings</div>
-            <div><span class="material-symbols-outlined">schedule</span> Real-time flight status and updates</div>
-            <div><span class="material-symbols-outlined">support_agent</span> 24/7 traveler support, every step of the way</div>
+            <span class="material-symbols-outlined menu-btn">menu</span>
+
         </div>
-        <a href="#" class="ab-btn on-dark">Book a Flight <span class="material-symbols-outlined">arrow_outward</span></a>
-    </div>
-</section>
+
+    </header>
+
+
+    <!-- 1. ABOUT HERO -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <div class="eyebrow">
+                <span class="dash"></span>
+                <p>About Stackly</p>
+            </div>
+            <h1>Connecting people to the places that <span>matter most</span></h1>
+            <p>For over a decade, Stackly Airline has been flying passengers safely and comfortably to destinations
+                across the globe, one journey at a time.</p>
+
+            <div class="hero-stats">
+                <div>
+                    <h3>12+</h3>
+                    <p>Years Flying</p>
+                </div>
+                <div>
+                    <h3>85</h3>
+                    <p>Destinations</p>
+                </div>
+                <div>
+                    <h3>4.2M</h3>
+                    <p>Happy Travellers</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-media">
+            <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1000&q=80"
+                alt="Airplane wing over clouds">
+            <div class="hero-badge">
+                <span class="material-symbols-outlined">flight</span>
+                <div>
+                    <h4>200+ Flights</h4>
+                    <p>Operated Daily</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. OUR STORY -->
+    <section class="story-section">
+        <div class="story-grid">
+            <div class="story-images">
+                <div class="story-img-main">
+                    <img src="https://images.unsplash.com/photo-1569629743817-70d8db6c323b?auto=format&fit=crop&w=800&q=80"
+                        alt="Aircraft on tarmac">
+                </div>
+                <div class="story-img-sub">
+                    <img src="https://images.unsplash.com/photo-1517479149777-5f3b1511d5ad?auto=format&fit=crop&w=700&q=80"
+                        alt="Aircraft runway view">
+                </div>
+            </div>
+
+            <div class="story-text">
+                <div class="eyebrow">
+                    <span class="dash"></span>
+                    <p>Our Story</p>
+                </div>
+                <h2>Built on a simple idea: flying should feel <span>effortless</span></h2>
+                <p>Stackly began with three aircraft and a single domestic route, founded by a group of aviation
+                    engineers who believed booking and boarding could be far less stressful than it was.</p>
+                <p>Today that idea has grown into a full-service airline connecting six continents, but the goal hasn't
+                    changed — get people where they're going, comfortably and on time.</p>
+                <p>Every process we build, from fare search to boarding, is measured against that original promise.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. MISSION & VALUES -->
+    <section class="values-section">
+        <div class="sec-head centered">
+            <div class="eyebrow">
+                <span class="dash"></span>
+                <p>What Drives Us</p>
+            </div>
+            <div class="sec-head-left">
+                <h2>Our Mission & <span>Values</span></h2>
+            </div>
+            <div class="sec-head-right">
+                <p>The principles that guide every decision, from the cockpit to customer support.</p>
+            </div>
+        </div>
+
+        <div class="values-grid">
+            <div class="value-card">
+                <span class="material-symbols-outlined">shield</span>
+                <h3>Safety First</h3>
+                <p>Every aircraft undergoes rigorous checks before it's cleared for takeoff.</p>
+            </div>
+
+            <div class="value-card">
+                <span class="material-symbols-outlined">handshake</span>
+                <h3>Honest Pricing</h3>
+                <p>No hidden fees — the fare you see is the fare you pay at checkout.</p>
+            </div>
+
+            <div class="value-card">
+                <span class="material-symbols-outlined">eco</span>
+                <h3>Sustainable Travel</h3>
+                <p>Investing in fuel-efficient aircraft to lower our footprint on every route.</p>
+            </div>
+
+            <div class="value-card">
+                <span class="material-symbols-outlined">diversity_3</span>
+                <h3>People First</h3>
+                <p>Treating every passenger and crew member with respect and care.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. STATS BAND -->
+    <section class="stats-section">
+        <div class="stats-row">
+            <div class="stat-item">
+                <h3>85+</h3>
+                <p>Global Destinations</p>
+            </div>
+
+            <div class="stat-item">
+                <h3>60</h3>
+                <p>Fleet Aircraft</p>
+            </div>
+
+            <div class="stat-item">
+                <h3>4.2M</h3>
+                <p>Passengers Yearly</p>
+            </div>
+
+            <div class="stat-item">
+                <h3>98%</h3>
+                <p>On-Time Performance</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. LEADERSHIP TEAM -->
+    <section class="team-section">
+        <div class="sec-head centered">
+            <div class="eyebrow">
+                <span class="dash"></span>
+                <p>Meet The Team</p>
+            </div>
+            <div class="sec-head-left">
+                <h2>Leadership Behind <span>Stackly</span></h2>
+            </div>
+            <div class="sec-head-right">
+                <p>Experienced aviation leaders steering the airline forward.</p>
+            </div>
+        </div>
+
+        <div class="team-grid">
+            <div class="team-card">
+                <div class="team-img">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=500&q=80"
+                        alt="Chief Executive Officer">
+                </div>
+                <div class="team-info">
+                    <h3>Arvind Menon</h3>
+                    <p>Chief Executive Officer</p>
+                </div>
+            </div>
+
+            <div class="team-card">
+                <div class="team-img">
+                    <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=500&q=80"
+                        alt="Chief Operating Officer">
+                </div>
+                <div class="team-info">
+                    <h3>Priya Nair</h3>
+                    <p>Chief Operating Officer</p>
+                </div>
+            </div>
+
+            <div class="team-card">
+                <div class="team-img">
+                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=500&q=80"
+                        alt="Head of Flight Operations">
+                </div>
+                <div class="team-info">
+                    <h3>Rohan Das</h3>
+                    <p>Head of Flight Operations</p>
+                </div>
+            </div>
+
+            <div class="team-card">
+                <div class="team-img">
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=500&q=80"
+                        alt="Head of Customer Experience">
+                </div>
+                <div class="team-info">
+                    <h3>Meera Shah</h3>
+                    <p>Head of Customer Experience</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. CAREERS CTA -->
+    <section class="cta-section">
+        <div class="cta-box">
+            <div class="cta-text">
+                <p class="tag">Join Our Crew</p>
+                <h2>Build Your Career In The Skies With Stackly</h2>
+                <p class="desc">We're always looking for pilots, cabin crew and ground staff who share our passion for
+                    safe, seamless travel.</p>
+
+                <button class="cta-btn">View Open Roles <span
+                        class="material-symbols-outlined">arrow_right_alt</span></button>
+            </div>
+
+            <div class="cta-img">
+                <img src="https://images.unsplash.com/photo-1556388158-158ea5ccacbc?auto=format&fit=crop&w=800&q=80"
+                    alt="Airline cabin crew">
+            </div>
+        </div>
+    </section>
+
+        <footer class="footer">
+        <div class="footer-main">
+            <div class="footer-logocontainer">
+                <a href="index.html"><img src="./src/logo.webp" alt="company Logo" class="footer-logo"></a>
+
+                <p>Fly smarter with easy booking and unbeatable prices.
+                    Explore new destinations with premium airline services.</p>
+
+                <div class="company-details">
+                    <div class="com-detail">
+                        <p> <span class="material-symbols-outlined">call</span>Phone Number
+                        <p>
+                            <a href="404.html">+91 12345 67890</a>
+                    </div>
+
+                    <div class="com-detail">
+                        <p> <span class="material-symbols-outlined">location_on</span>Our Location
+                        <p>
+                            <a href="404.html">Channai, Tamilnadu</a>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="footer1">
+
+                <h2>Quick Links</h2>
+
+                <div class="footer-links">
+
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="programs.html">Programs</a>
+                    <a href="pages.html">Pages</a>
+                    <a href="contact.html">Contact</a>
+
+                </div>
+
+            </div>
+
+            <div class="footer1">
+
+                <h2>Useful Links</h2>
+
+                <div class="footer-links">
+
+                    <a href="404.html">Privacy Policy</a>
+                    <a href="404.html">Terms & Conditions</a>
+                    <a href="404.html">Disclaimer</a>
+                    <a href="404.html">Support</a>
+                    <a href="404.html">FAQ</a>
+
+                </div>
+
+            </div>
+
+            <div class="footer-newsletter">
+
+                <h2>Our Newsletter</h2>
+
+                <p>Join us newsletter and stay informed with the latest updates in the industry</p>
+
+                <div class="footer-form">
+                    <input type="email" placeholder="Email Addreess" id="footer-email">
+                    <button class="subscribe-btn">Subscirbe</button>
+                </div>
+
+                <a href=""><span class="material-symbols-outlined">mail</span>admin@gmail.com</a>
+
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>2026 @ All Reserved By Stackly</p>
+            <div class="footer-sotial-links">
+                <a href="404.html"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="404.html"><i class="fa-brands fa-facebook"></i></a>
+                <a href="404.html"><i class="fa-brands fa-instagram"></i></a>
+                <a href="404.html"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+        <script src="script.js"></script>
 </body>
+
 </html>

@@ -1,37 +1,1012 @@
-<!-- ============================================================
-     SKYFARE AIRLINES — 8 HOME PAGE SECTIONS
-     Paste this block between your <header> and <footer>.
-     Same tokens as your existing theme:
-       --pcolor: #EF644C   --hcolor: #ff4e2e
-       Dark panels: #1F1F1F   Display font: Outfit   Body font: Noto Sans
-       Buttons reuse the .page-btn sliding-fill style.
-   ============================================================ -->
-
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Airline Ticket Booking Home-Page</title>
+    <title>Stackly Airline — Programs</title>
 
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,-50..200" />
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-
-    
 </head>
-   
 
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Noto Sans", sans-serif;
+    }
+
+    html,
+    body {
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+        background: #ffffff;
+    }
+
+    :root {
+        --pcolor: #603BFE;
+        --pcolor1: #7B2FF7;
+        --hcolor: #7B2FF7;
+        --dark: #14121a;
+        --text: #14121a;
+        --gcolor: #6b6b76;
+        --panel: #faf9fc;
+        --line: #ece9f4;
+        --gold: #b8860b;
+        --shadow: 0 10px 30px rgba(20, 18, 26, 0.06);
+    }
+
+    section {
+        width: 100%;
+        padding: 100px 50px;
+    }
+
+    .eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        width: fit-content;
+    }
+
+    .eyebrow .dash {
+        width: 22px;
+        height: 2px;
+        background: var(--hcolor);
+        display: inline-block;
+    }
+
+    .eyebrow p {
+        color: var(--hcolor);
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+    }
+
+    .sec-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 40px;
+        max-width: 1300px;
+        margin: 0 auto 50px;
+    }
+
+    .sec-head-left h2 {
+        font-size: clamp(28px, 3.6vw, 42px);
+        color: var(--text);
+        margin-top: 16px;
+        line-height: 1.15;
+    }
+
+    .sec-head-left h2 span {
+        color: var(--hcolor);
+        font-weight: 800;
+    }
+
+    .sec-head-right {
+        max-width: 340px;
+        text-align: right;
+    }
+
+    .sec-head-right p {
+        color: var(--gcolor);
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .sec-head.centered {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        max-width: 650px;
+    }
+
+    .sec-head.centered .sec-head-right {
+        text-align: center;
+        max-width: 550px;
+    }
+
+    @media (max-width:800px) {
+        .sec-head {
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+        }
+
+        .sec-head-right {
+            text-align: left;
+            max-width: 100%;
+        }
+    }
+
+    /* ===================== 1. PROGRAMS HERO ===================== */
+
+    .hero-section {
+        background: var(--panel);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 60px;
+        max-width: 1300px;
+        margin: 0 auto;
+    }
+
+    .hero-content .eyebrow {
+        margin-bottom: 18px;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(30px, 4.2vw, 48px);
+        color: var(--text);
+        line-height: 1.2;
+        margin-bottom: 20px;
+    }
+
+    .hero-content h1 span {
+        color: var(--hcolor);
+        font-weight: 800;
+    }
+
+    .hero-content p {
+        color: var(--gcolor);
+        font-size: 16px;
+        line-height: 1.7;
+        max-width: 480px;
+        margin-bottom: 30px;
+    }
+
+    .hero-btn {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        width: fit-content;
+        padding: 14px 28px;
+        border-radius: 10px;
+        border: none;
+        background: linear-gradient(120deg, var(--pcolor), var(--hcolor));
+        color: white;
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: .4s ease;
+    }
+
+    .hero-btn:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 25px rgba(123, 47, 247, 0.3);
+    }
+
+    .hero-media {
+        position: relative;
+        border-radius: 24px;
+        overflow: hidden;
+        height: 440px;
+        box-shadow: var(--shadow);
+    }
+
+    .hero-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .hero-badge {
+        position: absolute;
+        top: 24px;
+        right: 24px;
+        background: white;
+        border-radius: 14px;
+        padding: 14px 18px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        box-shadow: var(--shadow);
+    }
+
+    .hero-badge span {
+        font-size: 26px;
+        color: var(--hcolor);
+    }
+
+    .hero-badge p {
+        color: var(--text);
+        font-size: 13px;
+        font-weight: 700;
+    }
+
+    @media (max-width:1000px) {
+        .hero-section {
+            grid-template-columns: 1fr;
+        }
+
+        .hero-media {
+            height: 320px;
+            order: -1;
+        }
+    }
+
+    /* ===================== 2. MEMBERSHIP TIERS ===================== */
+
+    .tiers-section {
+        background: white;
+    }
+
+    .tiers-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        max-width: 1300px;
+        margin: 0 auto;
+    }
+
+    .tier-card {
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        padding: 36px 30px;
+        transition: .5s ease;
+        position: relative;
+    }
+
+    .tier-card:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow);
+    }
+
+    .tier-card.featured {
+        background: linear-gradient(150deg, var(--pcolor), var(--pcolor1));
+        border: none;
+    }
+
+    .tier-tag {
+        position: absolute;
+        top: 24px;
+        right: 24px;
+        background: white;
+        color: var(--hcolor);
+        font-size: 11px;
+        font-weight: 700;
+        padding: 5px 12px;
+        border-radius: 20px;
+        text-transform: uppercase;
+    }
+
+    .tier-icon {
+        font-size: 34px;
+        color: var(--hcolor);
+        margin-bottom: 18px;
+        display: block;
+    }
+
+    .tier-card.featured .tier-icon {
+        color: white;
+    }
+
+    .tier-card h3 {
+        font-size: 22px;
+        color: var(--text);
+        margin-bottom: 6px;
+    }
+
+    .tier-card.featured h3 {
+        color: white;
+    }
+
+    .tier-card .tier-sub {
+        color: var(--gcolor);
+        font-size: 13px;
+        margin-bottom: 22px;
+    }
+
+    .tier-card.featured .tier-sub {
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+    .tier-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .tier-list li {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--gcolor);
+        font-size: 14px;
+    }
+
+    .tier-card.featured .tier-list li {
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    .tier-list li span {
+        font-size: 18px;
+        color: var(--hcolor);
+    }
+
+    .tier-card.featured .tier-list li span {
+        color: white;
+    }
+
+    @media (max-width:1000px) {
+        .tiers-grid {
+            grid-template-columns: 1fr;
+            max-width: 500px;
+        }
+    }
+
+    /* ===================== 3. HOW MILES WORK ===================== */
+
+    .miles-section {
+        background: var(--panel);
+    }
+
+    .miles-row {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+        max-width: 1300px;
+        margin: 0 auto;
+    }
+
+    .miles-card {
+        background: white;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 30px 22px;
+        text-align: center;
+        transition: .5s ease;
+    }
+
+    .miles-card:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow);
+    }
+
+    .miles-num {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: var(--panel);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 18px;
+        font-size: 24px;
+        color: var(--hcolor);
+    }
+
+    .miles-card h3 {
+        color: var(--text);
+        font-size: 17px;
+        margin-bottom: 8px;
+    }
+
+    .miles-card p {
+        color: var(--gcolor);
+        font-size: 13.5px;
+        line-height: 1.6;
+    }
+
+    @media (max-width:1000px) {
+        .miles-row {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    @media (max-width:600px) {
+        .miles-row {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    /* ===================== 4. EXCLUSIVE PERKS ===================== */
+
+    .perks-section {
+        background: white;
+    }
+
+    .perks-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        max-width: 1300px;
+        margin: 0 auto;
+        align-items: center;
+    }
+
+    .perks-media {
+        border-radius: 24px;
+        overflow: hidden;
+        height: 440px;
+        box-shadow: var(--shadow);
+    }
+
+    .perks-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .perks-text .eyebrow {
+        margin-bottom: 16px;
+    }
+
+    .perks-text h2 {
+        font-size: clamp(26px, 3.2vw, 36px);
+        color: var(--text);
+        line-height: 1.2;
+        margin-bottom: 24px;
+    }
+
+    .perks-text h2 span {
+        color: var(--hcolor);
+        font-weight: 800;
+    }
+
+    .perk-item {
+        display: flex;
+        gap: 16px;
+        margin-bottom: 22px;
+    }
+
+    .perk-item span {
+        font-size: 26px;
+        color: var(--hcolor);
+        min-width: 26px;
+    }
+
+    .perk-item h4 {
+        color: var(--text);
+        font-size: 16px;
+        margin-bottom: 4px;
+    }
+
+    .perk-item p {
+        color: var(--gcolor);
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    @media (max-width:1000px) {
+        .perks-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .perks-media {
+            height: 300px;
+            order: -1;
+        }
+    }
+
+    /* ===================== 5. PARTNER PROGRAMS ===================== */
+
+    .partners-section {
+        background: var(--panel);
+    }
+
+    .partners-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        max-width: 1300px;
+        margin: 0 auto;
+    }
+
+    .partner-card {
+        background: white;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        overflow: hidden;
+        transition: .5s ease;
+    }
+
+    .partner-card:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow);
+    }
+
+    .partner-img {
+        height: 180px;
+    }
+
+    .partner-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .partner-body {
+        padding: 22px;
+    }
+
+    .partner-body .tag {
+        color: var(--hcolor);
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: .5px;
+        margin-bottom: 8px;
+        display: block;
+    }
+
+    .partner-body h3 {
+        color: var(--text);
+        font-size: 17px;
+        margin-bottom: 8px;
+    }
+
+    .partner-body p {
+        color: var(--gcolor);
+        font-size: 13.5px;
+        line-height: 1.6;
+    }
+
+    @media (max-width:1000px) {
+        .partners-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    @media (max-width:640px) {
+        .partners-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    /* ===================== 6. JOIN CTA ===================== */
+
+    .cta-section {
+        background: white;
+    }
+
+    .cta-box {
+        max-width: 1300px;
+        margin: 0 auto;
+        background: linear-gradient(120deg, var(--pcolor), var(--pcolor1));
+        border-radius: 24px;
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .cta-text {
+        padding: 60px;
+    }
+
+    .cta-text p.tag {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        margin-bottom: 14px;
+    }
+
+    .cta-text h2 {
+        color: white;
+        font-size: clamp(26px, 3.4vw, 38px);
+        max-width: 480px;
+        margin-bottom: 16px;
+    }
+
+    .cta-text p.desc {
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 15px;
+        max-width: 460px;
+        line-height: 1.6;
+        margin-bottom: 30px;
+    }
+
+    .cta-btn {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        width: fit-content;
+        padding: 14px 28px;
+        border-radius: 10px;
+        border: none;
+        background: white;
+        color: var(--hcolor);
+        font-size: 15px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: .4s ease;
+    }
+
+    .cta-btn:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+    }
+
+    .cta-img {
+        height: 100%;
+        min-height: 380px;
+    }
+
+    .cta-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    @media (max-width:900px) {
+        .cta-box {
+            grid-template-columns: 1fr;
+        }
+
+        .cta-img {
+            min-height: 240px;
+        }
+
+        .cta-text {
+            padding: 40px 30px;
+        }
+    }
+
+    @media (max-width:720px) {
+        section {
+            padding: 70px 20px;
+        }
+    }
+</style>
 
 <body>
+
     
+    <header class="header">
+        <a href="index.html" class="logoimage"><img src="./src/logo.webp" alt="Compny Logo"></a>
+
+        <div class="navlinks">
+            <ul class="menus">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us<span>+</span></a></li>
+                <li class="show"><a href="programs.html"  class="active">Programs<span>+</span></a></li>
+                <li><a href="pages.html">Pages<span>+</span></a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="callus">
+
+            <div class="call">
+                <span class="material-symbols-outlined callicon">add_call</span>
+                <div>
+                    <p>Call Us</p>
+                    <a href="tel:+911234567890">+91 1234567890</a>
+                </div>
+            </div>
+
+            <a href="404.html"> <span class="material-symbols-outlined">search</span></a>
+            <a href="login.html"><span class="material-symbols-outlined">person</span></a>
+
+            <button class="book-btn errorpage">Book Now <span class="material-symbols-outlined">
+                    travel</span></button>
+
+            <span class="material-symbols-outlined menu-btn">menu</span>
+
+        </div>
+
+    </header>
+
+
+    <!-- 1. PROGRAMS HERO -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <div class="eyebrow">
+                <span class="dash"></span>
+                <p>Stackly Rewards</p>
+            </div>
+            <h1>Earn Miles Every Time You <span>Fly With Us</span></h1>
+            <p>Join Stackly Rewards and turn every trip into miles you can redeem for flights, upgrades and exclusive travel perks.</p>
+
+            <button class="hero-btn">Join For Free <span class="material-symbols-outlined">arrow_right_alt</span></button>
+        </div>
+
+        <div class="hero-media">
+            <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1000&q=80" alt="Airplane wing over clouds">
+            <div class="hero-badge">
+                <span class="material-symbols-outlined">workspace_premium</span>
+                <p>4.2M Members</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. MEMBERSHIP TIERS -->
+    <section class="tiers-section">
+        <div class="sec-head centered">
+            <div class="eyebrow">
+                <span class="dash"></span>
+                <p>Choose Your Tier</p>
+            </div>
+            <div class="sec-head-left">
+                <h2>Membership That <span>Grows With You</span></h2>
+            </div>
+            <div class="sec-head-right">
+                <p>The more you fly, the higher you climb and the more you unlock.</p>
+            </div>
+        </div>
+
+        <div class="tiers-grid">
+            <div class="tier-card">
+                <span class="material-symbols-outlined tier-icon">military_tech</span>
+                <h3>Silver</h3>
+                <p class="tier-sub">0 – 24,999 miles per year</p>
+                <ul class="tier-list">
+                    <li><span class="material-symbols-outlined">check_circle</span>Earn 1 mile per km flown</li>
+                    <li><span class="material-symbols-outlined">check_circle</span>Priority check-in counters</li>
+                    <li><span class="material-symbols-outlined">check_circle</span>5kg extra baggage allowance</li>
+                </ul>
+            </div>
+
+            <div class="tier-card featured">
+                <span class="tier-tag">Most Popular</span>
+                <span class="material-symbols-outlined tier-icon">workspace_premium</span>
+                <h3>Gold</h3>
+                <p class="tier-sub">25,000 – 74,999 miles per year</p>
+                <ul class="tier-list">
+                    <li><span class="material-symbols-outlined">check_circle</span>Earn 1.5 miles per km flown</li>
+                    <li><span class="material-symbols-outlined">check_circle</span>Free seat selection & lounge access</li>
+                    <li><span class="material-symbols-outlined">check_circle</span>15kg extra baggage allowance</li>
+                    <li><span class="material-symbols-outlined">check_circle</span>Complimentary cabin upgrades</li>
+                </ul>
+            </div>
+
+            <div class="tier-card">
+                <span class="material-symbols-outlined tier-icon">diamond</span>
+                <h3>Platinum</h3>
+                <p class="tier-sub">75,000+ miles per year</p>
+                <ul class="tier-list">
+                    <li><span class="material-symbols-outlined">check_circle</span>Earn 2 miles per km flown</li>
+                    <li><span class="material-symbols-outlined">check_circle</span>Dedicated concierge support</li>
+                    <li><span class="material-symbols-outlined">check_circle</span>25kg extra baggage allowance</li>
+                    <li><span class="material-symbols-outlined">check_circle</span>Guaranteed business class seats</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. HOW MILES WORK -->
+    <section class="miles-section">
+        <div class="sec-head centered">
+            <div class="eyebrow">
+                <span class="dash"></span>
+                <p>Simple Process</p>
+            </div>
+            <div class="sec-head-left">
+                <h2>How Earning <span>Miles Works</span></h2>
+            </div>
+            <div class="sec-head-right">
+                <p>Four simple steps to start earning and redeeming rewards.</p>
+            </div>
+        </div>
+
+        <div class="miles-row">
+            <div class="miles-card">
+                <div class="miles-num"><span class="material-symbols-outlined">app_registration</span></div>
+                <h3>Sign Up</h3>
+                <p>Create your free Stackly Rewards account in under a minute.</p>
+            </div>
+
+            <div class="miles-card">
+                <div class="miles-num"><span class="material-symbols-outlined">flight_takeoff</span></div>
+                <h3>Fly & Earn</h3>
+                <p>Add your membership number when booking to earn miles automatically.</p>
+            </div>
+
+            <div class="miles-card">
+                <div class="miles-num"><span class="material-symbols-outlined">trending_up</span></div>
+                <h3>Track Progress</h3>
+                <p>Watch your miles and tier status grow in your rewards dashboard.</p>
+            </div>
+
+            <div class="miles-card">
+                <div class="miles-num"><span class="material-symbols-outlined">redeem</span></div>
+                <h3>Redeem Rewards</h3>
+                <p>Use your miles for flights, upgrades, baggage and partner offers.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. EXCLUSIVE PERKS -->
+    <section class="perks-section">
+        <div class="perks-grid">
+            <div class="perks-media">
+                <img src="https://images.unsplash.com/photo-1540339832862-474599807836?auto=format&fit=crop&w=800&q=80" alt="Airport lounge">
+            </div>
+
+            <div class="perks-text">
+                <div class="eyebrow">
+                    <span class="dash"></span>
+                    <p>Member Perks</p>
+                </div>
+                <h2>Travel Perks Built For <span>Frequent Flyers</span></h2>
+
+                <div class="perk-item">
+                    <span class="material-symbols-outlined">chair</span>
+                    <div>
+                        <h4>Lounge Access</h4>
+                        <p>Relax in premium airport lounges before every flight.</p>
+                    </div>
+                </div>
+
+                <div class="perk-item">
+                    <span class="material-symbols-outlined">upgrade</span>
+                    <div>
+                        <h4>Priority Upgrades</h4>
+                        <p>Get first access to available seat and cabin upgrades.</p>
+                    </div>
+                </div>
+
+                <div class="perk-item">
+                    <span class="material-symbols-outlined">luggage</span>
+                    <div>
+                        <h4>Extra Baggage</h4>
+                        <p>Carry more without paying extra baggage fees.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. PARTNER PROGRAMS -->
+    <section class="partners-section">
+        <div class="sec-head">
+            <div class="sec-head-left">
+                <div class="eyebrow">
+                    <span class="dash"></span>
+                    <p>Beyond Flights</p>
+                </div>
+                <h2>Earn Miles With Our <span>Partners</span></h2>
+            </div>
+            <div class="sec-head-right">
+                <p>Extend your rewards beyond the airport with our trusted partners.</p>
+            </div>
+        </div>
+
+        <div class="partners-grid">
+            <div class="partner-card">
+                <div class="partner-img">
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80" alt="Hotel partner">
+                </div>
+                <div class="partner-body">
+                    <span class="tag">Hotels</span>
+                    <h3>Partner Hotel Stays</h3>
+                    <p>Earn up to 5 miles per ₹100 spent at partner hotels worldwide.</p>
+                </div>
+            </div>
+
+            <div class="partner-card">
+                <div class="partner-img">
+                    <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=600&q=80" alt="Car rental partner">
+                </div>
+                <div class="partner-body">
+                    <span class="tag">Car Rentals</span>
+                    <h3>Rental Car Rewards</h3>
+                    <p>Collect miles every time you rent a car through our partners.</p>
+                </div>
+            </div>
+
+            <div class="partner-card">
+                <div class="partner-img">
+                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=600&q=80" alt="Credit card partner">
+                </div>
+                <div class="partner-body">
+                    <span class="tag">Co-Brand Card</span>
+                    <h3>Stackly Rewards Card</h3>
+                    <p>Earn miles on everyday spending with our co-branded credit card.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. JOIN CTA -->
+    <section class="cta-section">
+        <div class="cta-box">
+            <div class="cta-text">
+                <p class="tag">Start Earning Today</p>
+                <h2>Join Stackly Rewards In Under A Minute</h2>
+                <p class="desc">Sign up for free and start earning miles on your very next flight booking.</p>
+
+                <button class="cta-btn">Create Free Account <span class="material-symbols-outlined">arrow_right_alt</span></button>
+            </div>
+
+            <div class="cta-img">
+                <img src="https://images.unsplash.com/photo-1569629743817-70d8db6c323b?auto=format&fit=crop&w=800&q=80" alt="Aircraft on tarmac">
+            </div>
+        </div>
+    </section>
+
+       <footer class="footer">
+        <div class="footer-main">
+            <div class="footer-logocontainer">
+                <a href="index.html"><img src="./src/logo.webp" alt="company Logo" class="footer-logo"></a>
+
+                <p>Fly smarter with easy booking and unbeatable prices.
+                    Explore new destinations with premium airline services.</p>
+
+                <div class="company-details">
+                    <div class="com-detail">
+                        <p> <span class="material-symbols-outlined">call</span>Phone Number
+                        <p>
+                            <a href="404.html">+91 12345 67890</a>
+                    </div>
+
+                    <div class="com-detail">
+                        <p> <span class="material-symbols-outlined">location_on</span>Our Location
+                        <p>
+                            <a href="404.html">Channai, Tamilnadu</a>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="footer1">
+
+                <h2>Quick Links</h2>
+
+                <div class="footer-links">
+
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="programs.html">Programs</a>
+                    <a href="pages.html">Pages</a>
+                    <a href="contact.html">Contact</a>
+
+                </div>
+
+            </div>
+
+            <div class="footer1">
+
+                <h2>Useful Links</h2>
+
+                <div class="footer-links">
+
+                    <a href="404.html">Privacy Policy</a>
+                    <a href="404.html">Terms & Conditions</a>
+                    <a href="404.html">Disclaimer</a>
+                    <a href="404.html">Support</a>
+                    <a href="404.html">FAQ</a>
+
+                </div>
+
+            </div>
+
+            <div class="footer-newsletter">
+
+                <h2>Our Newsletter</h2>
+
+                <p>Join us newsletter and stay informed with the latest updates in the industry</p>
+
+                <div class="footer-form">
+                    <input type="email" placeholder="Email Addreess" id="footer-email">
+                    <button class="subscribe-btn">Subscirbe</button>
+                </div>
+
+                <a href=""><span class="material-symbols-outlined">mail</span>admin@gmail.com</a>
+
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>2026 @ All Reserved By Stackly</p>
+            <div class="footer-sotial-links">
+                <a href="404.html"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="404.html"><i class="fa-brands fa-facebook"></i></a>
+                <a href="404.html"><i class="fa-brands fa-instagram"></i></a>
+                <a href="404.html"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
 
 </body>
 

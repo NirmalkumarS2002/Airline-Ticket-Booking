@@ -22,21 +22,29 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        font-family: "Noto Sans", sans-serif;
     }
 
     html,
     body {
         overflow-x: hidden;
         scroll-behavior: smooth;
+        background: #ffffff;
     }
 
 
+  
     :root {
         --pcolor: #603BFE;
         --pcolor1: #7B2FF7;
-        --hcolor: #9147FF;
-        --dark: #1F1F1F;
-        --gcolor: rgb(197, 197, 197);
+        --hcolor: #7B2FF7;
+        --dark: #14121a;
+        --text: #14121a;
+        --gcolor: #6b6b76;
+        --panel: #faf9fc;
+        --panel2: #ffffff;
+        --line: #ece9f4;
+        --shadow: 0 10px 30px rgba(20, 18, 26, 0.06);
     }
 
 
@@ -109,9 +117,9 @@
         display: flex;
         flex-direction: column;
         background: rgba(128, 128, 128, 0.233);
-         backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
         gap: 10px;
-        border: 1px solid rgba(128, 128, 128, 0.384); 
+        border: 1px solid rgba(128, 128, 128, 0.384);
         padding: 10px;
         border-radius: 15px;
         width: 100%;
@@ -119,9 +127,9 @@
         transition: .6s ease;
     }
 
-        .herocard:hover{
-            transform: translateY(-8px);
-        }
+    .herocard:hover {
+        transform: translateY(-8px);
+    }
 
     .herocard span {
         font-size: 70px;
@@ -170,9 +178,9 @@
         transition: .6s ease;
     }
 
-    .start-booking a:hover{
-      color: white;
-      transform: scale(0.9);
+    .start-booking a:hover {
+        color: white;
+        transform: scale(0.9);
     }
 
     .video-tag {
@@ -279,6 +287,803 @@
             text-align: center;
         }
     }
+
+    /*added section*/
+
+    section {
+        width: 100%;
+        padding: 100px 50px;
+    }
+
+    .eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        width: fit-content;
+    }
+
+    .eyebrow .dash {
+        width: 22px;
+        height: 2px;
+        background: var(--hcolor);
+        display: inline-block;
+    }
+
+    .eyebrow p {
+        color: var(--hcolor);
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+    }
+
+    .sec-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 40px;
+        max-width: 1300px;
+        margin: 0 auto 50px;
+    }
+
+    .sec-head-left h2 {
+        font-size: clamp(28px, 3.6vw, 42px);
+        color: var(--text);
+        margin-top: 16px;
+        line-height: 1.15;
+    }
+
+    .sec-head-left h2 span {
+        color: var(--hcolor);
+        font-weight: 800;
+    }
+
+    .sec-head-right {
+        max-width: 320px;
+        text-align: right;
+    }
+
+    .sec-head-right p {
+        color: var(--gcolor);
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .sec-head.centered {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        max-width: 650px;
+    }
+
+    .sec-head.centered .sec-head-right {
+        text-align: center;
+        max-width: 550px;
+    }
+
+    @media (max-width:800px) {
+        .sec-head {
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+        }
+
+        .sec-head-right {
+            text-align: left;
+            max-width: 100%;
+        }
+    }
+
+    /* ===================== 1. FLIGHT SEARCH ===================== */
+
+    .search-section {
+        background: var(--panel);
+    }
+
+    .search-section .sec-head {
+        margin-bottom: 40px;
+    }
+
+    .search-box {
+        max-width: 1300px;
+        margin: 0 auto;
+        background: white;
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: var(--shadow);
+    }
+
+    .trip-tabs {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 25px;
+    }
+
+    .trip-tabs button {
+        padding: 9px 22px;
+        border-radius: 30px;
+        border: 1px solid var(--line);
+        background: transparent;
+        color: var(--gcolor);
+        font-size: 14px;
+        cursor: pointer;
+        transition: .4s ease;
+    }
+
+    .trip-tabs button.active {
+        background: var(--hcolor);
+        color: white;
+        border-color: var(--hcolor);
+    }
+
+    .search-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 1.2fr 1fr 1fr auto;
+        gap: 18px;
+        align-items: end;
+    }
+
+    .search-field {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .search-field label {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        color: var(--gcolor);
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: .5px;
+    }
+
+    .search-field label span {
+        font-size: 16px;
+        color: var(--hcolor);
+    }
+
+    .search-field input,
+    .search-field select {
+        padding: 13px 14px;
+        border-radius: 10px;
+        border: 1px solid var(--line);
+        background: var(--panel);
+        color: var(--text);
+        font-size: 15px;
+        outline: none;
+    }
+
+    .search-field input:focus,
+    .search-field select:focus {
+        border-color: var(--hcolor);
+        background: white;
+    }
+
+    .search-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 14px 26px;
+        border-radius: 10px;
+        border: none;
+        background: linear-gradient(120deg, var(--pcolor), var(--hcolor));
+        color: white;
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: .4s ease;
+        white-space: nowrap;
+    }
+
+    .search-btn:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 25px rgba(123, 47, 247, 0.3);
+    }
+
+    @media (max-width:1000px) {
+        .search-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    @media (max-width:600px) {
+        .search-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    /* ===================== 2. DESTINATIONS ===================== */
+
+    .destinations-section {
+        background: white;
+    }
+
+    .dest-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 22px;
+        max-width: 1300px;
+        margin: 0 auto;
+    }
+
+    .dest-card {
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        height: 320px;
+        box-shadow: var(--shadow);
+        transition: .5s ease;
+    }
+
+    .dest-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: .6s ease;
+    }
+
+    .dest-card:hover img {
+        transform: scale(1.08);
+    }
+
+    .dest-card:hover {
+        transform: translateY(-6px);
+    }
+
+    .dest-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0) 55%);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 20px;
+    }
+
+    .dest-overlay h3 {
+        color: white;
+        font-size: 19px;
+        margin-bottom: 4px;
+    }
+
+    .dest-overlay p.tag {
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 13px;
+        margin-bottom: 8px;
+    }
+
+    .dest-overlay .price {
+        color: #d9baff;
+        font-size: 14px;
+        font-weight: 700;
+    }
+
+    @media (max-width:1000px) {
+        .dest-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    @media (max-width:640px) {
+        .dest-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    /* ===================== 3. WHY CHOOSE ===================== */
+
+    .why-section {
+        background: var(--panel);
+    }
+
+    .why-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+        max-width: 1300px;
+        margin: 0 auto;
+    }
+
+    .why-card {
+        background: white;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 30px 24px;
+        transition: .5s ease;
+    }
+
+    .why-card:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow);
+        border-color: var(--hcolor);
+    }
+
+    .why-card span {
+        font-size: 40px;
+        color: var(--hcolor);
+        margin-bottom: 18px;
+        display: block;
+    }
+
+    .why-card h3 {
+        color: var(--text);
+        font-size: 19px;
+        margin-bottom: 10px;
+    }
+
+    .why-card p {
+        color: var(--gcolor);
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    @media (max-width:1000px) {
+        .why-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    @media (max-width:600px) {
+        .why-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    /* ===================== 4. FLIGHT DEALS ===================== */
+
+    .deals-section {
+        background: white;
+    }
+
+    .deals-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        max-width: 1300px;
+        margin: 0 auto;
+    }
+
+    .deal-card {
+        background: white;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        overflow: hidden;
+        transition: .5s ease;
+    }
+
+    .deal-card:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow);
+    }
+
+    .deal-img {
+        position: relative;
+        height: 190px;
+    }
+
+    .deal-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .deal-badge {
+        position: absolute;
+        top: 14px;
+        left: 14px;
+        background: var(--hcolor);
+        color: white;
+        padding: 5px 14px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    .deal-body {
+        padding: 22px;
+    }
+
+    .deal-route {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--text);
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 8px;
+    }
+
+    .deal-route span {
+        font-size: 20px;
+        color: var(--hcolor);
+    }
+
+    .deal-body p.date {
+        color: var(--gcolor);
+        font-size: 13px;
+        margin-bottom: 18px;
+    }
+
+    .deal-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid var(--line);
+        padding-top: 16px;
+    }
+
+    .deal-footer .price {
+        color: var(--text);
+        font-size: 22px;
+        font-weight: 700;
+    }
+
+    .deal-footer .price span {
+        color: var(--gcolor);
+        font-size: 13px;
+        font-weight: 400;
+    }
+
+    .deal-footer a {
+        color: var(--hcolor);
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        transition: .4s ease;
+    }
+
+    .deal-footer a:hover {
+        color: var(--pcolor);
+    }
+
+    @media (max-width:1000px) {
+        .deals-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    @media (max-width:640px) {
+        .deals-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    /* ===================== 5. HOW IT WORKS ===================== */
+
+    .steps-section {
+        background: var(--panel);
+    }
+
+    .steps-row {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+        max-width: 1300px;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    .step-card {
+        position: relative;
+        text-align: center;
+        padding: 30px 20px;
+        background: white;
+        border-radius: 16px;
+        border: 1px solid var(--line);
+        transition: .5s ease;
+    }
+
+    .step-card:hover {
+        box-shadow: var(--shadow);
+        transform: translateY(-6px);
+    }
+
+    .step-num {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: 1px solid var(--line);
+        background: var(--panel);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+        font-size: 26px;
+        color: var(--hcolor);
+    }
+
+    .step-card h3 {
+        color: var(--text);
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .step-card p {
+        color: var(--gcolor);
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    @media (max-width:1000px) {
+        .steps-row {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    @media (max-width:600px) {
+        .steps-row {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    /* ===================== 6. FLEET ===================== */
+
+    .fleet-section {
+        background: white;
+    }
+
+    .fleet-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        max-width: 1300px;
+        margin: 0 auto;
+    }
+
+    .fleet-card {
+        background: white;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        overflow: hidden;
+        transition: .5s ease;
+    }
+
+    .fleet-card:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow);
+        border-color: var(--hcolor);
+    }
+
+    .fleet-card img {
+        width: 100%;
+        height: 210px;
+        object-fit: cover;
+    }
+
+    .fleet-info {
+        padding: 22px;
+    }
+
+    .fleet-info h3 {
+        color: var(--text);
+        font-size: 19px;
+        margin-bottom: 10px;
+    }
+
+    .fleet-specs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-top: 14px;
+    }
+
+    .fleet-specs div {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        color: var(--gcolor);
+        font-size: 13px;
+    }
+
+    .fleet-specs div span {
+        color: var(--hcolor);
+        font-size: 18px;
+    }
+
+    @media (max-width:1000px) {
+        .fleet-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    @media (max-width:640px) {
+        .fleet-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    /* ===================== 7. TESTIMONIALS ===================== */
+
+    .test-section {
+        background: var(--panel);
+    }
+
+    .test-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        max-width: 1300px;
+        margin: 0 auto;
+    }
+
+    .test-card {
+        background: white;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 28px;
+        transition: .5s ease;
+    }
+
+    .test-card:hover {
+        transform: translateY(-6px);
+        box-shadow: var(--shadow);
+    }
+
+    .test-rating {
+        color: var(--hcolor);
+        font-size: 16px;
+        margin-bottom: 16px;
+        letter-spacing: 3px;
+    }
+
+    .test-card p.quote {
+        color: var(--gcolor);
+        font-size: 14.5px;
+        line-height: 1.7;
+        margin-bottom: 24px;
+    }
+
+    .test-user {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .test-user img {
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid var(--hcolor);
+    }
+
+    .test-user h4 {
+        color: var(--text);
+        font-size: 15px;
+    }
+
+    .test-user span {
+        color: var(--gcolor);
+        font-size: 13px;
+    }
+
+    @media (max-width:1000px) {
+        .test-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    @media (max-width:640px) {
+        .test-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    /* ===================== 8. NEWSLETTER / APP CTA ===================== */
+
+    .cta-section {
+        background: white;
+    }
+
+    .cta-box {
+        max-width: 1300px;
+        margin: 0 auto;
+        background: linear-gradient(120deg, var(--pcolor), var(--pcolor1));
+        border-radius: 24px;
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .cta-text {
+        padding: 60px;
+    }
+
+    .cta-text p.tag {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        margin-bottom: 14px;
+    }
+
+    .cta-text h2 {
+        color: white;
+        font-size: clamp(26px, 3.4vw, 38px);
+        max-width: 480px;
+        margin-bottom: 16px;
+    }
+
+    .cta-text p.desc {
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 15px;
+        max-width: 460px;
+        line-height: 1.6;
+        margin-bottom: 30px;
+    }
+
+    .cta-form {
+        position: relative;
+        max-width: 400px;
+    }
+
+    .cta-form input {
+        width: 100%;
+        padding: 15px 130px 15px 18px;
+        border-radius: 10px;
+        border: none;
+        outline: none;
+        font-size: 14px;
+        background: rgba(255, 255, 255, 0.95);
+    }
+
+    .cta-form button {
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        bottom: 5px;
+        padding: 0 20px;
+        border-radius: 8px;
+        border: none;
+        background: var(--dark);
+        color: white;
+        font-size: 14px;
+        cursor: pointer;
+        transition: .4s ease;
+    }
+
+    .cta-form button:hover {
+        background: black;
+    }
+
+    .cta-img {
+        height: 100%;
+        min-height: 380px;
+    }
+
+    .cta-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    @media (max-width:900px) {
+        .cta-box {
+            grid-template-columns: 1fr;
+        }
+
+        .cta-img {
+            min-height: 240px;
+        }
+
+        .cta-text {
+            padding: 40px 30px;
+        }
+    }
+
+    @media (max-width:720px) {
+        section {
+            padding: 70px 20px;
+        }
+    }
 </style>
 
 <body>
@@ -288,7 +1093,7 @@
 
         <div class="navlinks">
             <ul class="menus">
-                <li><a href="index.html" class="active">Home</a></li>
+                <li class="show"><a href="index.html" class="active">Home</a></li>
                 <li><a href="about.html">About Us<span>+</span></a></li>
                 <li><a href="programs.html">Programs<span>+</span></a></li>
                 <li><a href="pages.html">Pages<span>+</span></a></li>
@@ -318,7 +1123,7 @@
 
     </header>
 
-    <section class="hero-section">
+    <div class="hero-section">
 
         <div class="hero-text">
             <div class="hero-tag">
@@ -374,6 +1179,385 @@
             </div>
 
 
+        </div>
+    </div>
+
+        <!-- 1. FLIGHT SEARCH -->
+    <section class="search-section">
+        <div class="sec-head centered">
+            <div class="eyebrow">
+                <span class="dash"></span>
+                <p>Book A Flight</p>
+            </div>
+            <div class="sec-head-left">
+                <h2>Find Your Next <span>Journey</span></h2>
+            </div>
+            <div class="sec-head-right">
+                <p>Compare fares across hundreds of routes and lock in the best price for your trip.</p>
+            </div>
+        </div>
+
+        <div class="search-box">
+            <div class="trip-tabs">
+                <button class="active">Round Trip</button>
+                <button>One Way</button>
+                <button>Multi City</button>
+            </div>
+
+            <div class="search-grid">
+                <div class="search-field">
+                    <label><span class="material-symbols-outlined">flight_takeoff</span>From</label>
+                    <input type="text" placeholder="Chennai (MAA)">
+                </div>
+
+                <div class="search-field">
+                    <label><span class="material-symbols-outlined">flight_land</span>To</label>
+                    <input type="text" placeholder="Dubai (DXB)">
+                </div>
+
+                <div class="search-field">
+                    <label><span class="material-symbols-outlined">calendar_month</span>Departure</label>
+                    <input type="date">
+                </div>
+
+                <div class="search-field">
+                    <label><span class="material-symbols-outlined">group</span>Passengers</label>
+                    <select>
+                        <option>1 Adult</option>
+                        <option>2 Adults</option>
+                        <option>2 Adults, 1 Child</option>
+                        <option>Family (4)</option>
+                    </select>
+                </div>
+
+                <button class="search-btn">Search Flights <span class="material-symbols-outlined">search</span></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. POPULAR DESTINATIONS -->
+    <section class="destinations-section">
+        <div class="sec-head">
+            <div class="sec-head-left">
+                <div class="eyebrow">
+                    <span class="dash"></span>
+                    <p>Trending Now</p>
+                </div>
+                <h2>Popular destinations this <span>season</span></h2>
+            </div>
+            <div class="sec-head-right">
+                <p>Handpicked routes with the best availability and fares booked by travelers like you this week.</p>
+            </div>
+        </div>
+
+        <div class="dest-grid">
+            <div class="dest-card">
+                <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=900&q=80" alt="Paris">
+                <div class="dest-overlay">
+                    <h3>Paris, France</h3>
+                    <p class="tag">Direct flights daily</p>
+                    <p class="price">From ₹42,500</p>
+                </div>
+            </div>
+
+            <div class="dest-card">
+                <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=700&q=80" alt="Tokyo">
+                <div class="dest-overlay">
+                    <h3>Tokyo, Japan</h3>
+                    <p class="tag">Direct flights daily</p>
+                    <p class="price">From ₹58,900</p>
+                </div>
+            </div>
+
+            <div class="dest-card">
+                <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=700&q=80" alt="Dubai">
+                <div class="dest-overlay">
+                    <h3>Dubai, UAE</h3>
+                    <p class="tag">Direct flights daily</p>
+                    <p class="price">From ₹18,200</p>
+                </div>
+            </div>
+
+            <div class="dest-card">
+                <img src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&w=700&q=80" alt="New York">
+                <div class="dest-overlay">
+                    <h3>New York, USA</h3>
+                    <p class="tag">Direct flights daily</p>
+                    <p class="price">From ₹65,400</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. WHY CHOOSE US -->
+    <section class="why-section">
+        <div class="sec-head centered">
+            <div class="eyebrow">
+                <span class="dash"></span>
+                <p>Our Advantage</p>
+            </div>
+            <div class="sec-head-left">
+                <h2>Why Book With <span>Stackly</span></h2>
+            </div>
+            <div class="sec-head-right">
+                <p>Everything you need for a smooth booking experience, from search to landing.</p>
+            </div>
+        </div>
+
+        <div class="why-grid">
+            <div class="why-card">
+                <span class="material-symbols-outlined">payments</span>
+                <h3>Best Fare Guarantee</h3>
+                <p>We track prices daily so you always book at the lowest available fare.</p>
+            </div>
+
+            <div class="why-card">
+                <span class="material-symbols-outlined">support_agent</span>
+                <h3>24/7 Support</h3>
+                <p>Our travel desk is available round the clock for rebooking and queries.</p>
+            </div>
+
+            <div class="why-card">
+                <span class="material-symbols-outlined">verified_user</span>
+                <h3>Secure Payments</h3>
+                <p>Every transaction is encrypted and protected with trusted payment gateways.</p>
+            </div>
+
+            <div class="why-card">
+                <span class="material-symbols-outlined">luggage</span>
+                <h3>Flexible Baggage</h3>
+                <p>Add extra baggage or upgrade your cabin during or after booking.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. FLIGHT DEALS -->
+    <section class="deals-section">
+        <div class="sec-head">
+            <div class="sec-head-left">
+                <div class="eyebrow">
+                    <span class="dash"></span>
+                    <p>Limited Time</p>
+                </div>
+                <h2>Today's Flight <span>Deals</span></h2>
+            </div>
+            <div class="sec-head-right">
+                <p>Fresh fare drops on our busiest routes, refreshed every day.</p>
+            </div>
+        </div>
+
+        <div class="deals-grid">
+            <div class="deal-card">
+                <div class="deal-img">
+                    <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=700&q=80" alt="Chennai to Singapore">
+                    <span class="deal-badge">Save 22%</span>
+                </div>
+                <div class="deal-body">
+                    <div class="deal-route">Chennai <span class="material-symbols-outlined">arrow_right_alt</span> Singapore</div>
+                    <p class="date">Non-stop · Departs 24 Aug 2026</p>
+                    <div class="deal-footer">
+                        <p class="price">₹14,999 <span>/ person</span></p>
+                        <a href="#">Book Now <span class="material-symbols-outlined">arrow_right_alt</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="deal-card">
+                <div class="deal-img">
+                    <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=700&q=80" alt="Chennai to Bangkok">
+                    <span class="deal-badge">Save 18%</span>
+                </div>
+                <div class="deal-body">
+                    <div class="deal-route">Chennai <span class="material-symbols-outlined">arrow_right_alt</span> Bangkok</div>
+                    <p class="date">1 Stop · Departs 02 Sep 2026</p>
+                    <div class="deal-footer">
+                        <p class="price">₹11,450 <span>/ person</span></p>
+                        <a href="#">Book Now <span class="material-symbols-outlined">arrow_right_alt</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="deal-card">
+                <div class="deal-img">
+                    <img src="https://images.unsplash.com/photo-1569154941061-e231b4725ef1?auto=format&fit=crop&w=700&q=80" alt="Chennai to London">
+                    <span class="deal-badge">Save 15%</span>
+                </div>
+                <div class="deal-body">
+                    <div class="deal-route">Chennai <span class="material-symbols-outlined">arrow_right_alt</span> London</div>
+                    <p class="date">Non-stop · Departs 10 Sep 2026</p>
+                    <div class="deal-footer">
+                        <p class="price">₹49,800 <span>/ person</span></p>
+                        <a href="#">Book Now <span class="material-symbols-outlined">arrow_right_alt</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. HOW IT WORKS -->
+    <section class="steps-section">
+        <div class="sec-head centered">
+            <div class="eyebrow">
+                <span class="dash"></span>
+                <p>Simple Process</p>
+            </div>
+            <div class="sec-head-left">
+                <h2>Book In <span>Four Steps</span></h2>
+            </div>
+            <div class="sec-head-right">
+                <p>From search to boarding pass, booking with us takes just a few minutes.</p>
+            </div>
+        </div>
+
+        <div class="steps-row">
+            <div class="step-card">
+                <div class="step-num"><span class="material-symbols-outlined">travel_explore</span></div>
+                <h3>Search Route</h3>
+                <p>Enter your origin, destination and travel dates.</p>
+            </div>
+
+            <div class="step-card">
+                <div class="step-num"><span class="material-symbols-outlined">compare_arrows</span></div>
+                <h3>Compare Fares</h3>
+                <p>Filter results by price, duration and airline.</p>
+            </div>
+
+            <div class="step-card">
+                <div class="step-num"><span class="material-symbols-outlined">credit_card</span></div>
+                <h3>Make Payment</h3>
+                <p>Pay securely with cards, wallets or net banking.</p>
+            </div>
+
+            <div class="step-card">
+                <div class="step-num"><span class="material-symbols-outlined">confirmation_number</span></div>
+                <h3>Get E-Ticket</h3>
+                <p>Receive your confirmation and boarding pass instantly.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. OUR FLEET -->
+    <section class="fleet-section">
+        <div class="sec-head centered">
+            <div class="eyebrow">
+                <span class="dash"></span>
+                <p>Meet The Fleet</p>
+            </div>
+            <div class="sec-head-left">
+                <h2>Aircraft Built For <span>Comfort</span></h2>
+            </div>
+            <div class="sec-head-right">
+                <p>Modern, fuel-efficient aircraft engineered for a smoother ride.</p>
+            </div>
+        </div>
+
+        <div class="fleet-grid">
+            <div class="fleet-card">
+                <img src="https://images.unsplash.com/photo-1517479149777-5f3b1511d5ad?auto=format&fit=crop&w=700&q=80" alt="Aircraft on runway">
+                <div class="fleet-info">
+                    <h3>Stackly A320neo</h3>
+                    <div class="fleet-specs">
+                        <div><span class="material-symbols-outlined">airline_seat_recline_normal</span>180 Seats</div>
+                        <div><span class="material-symbols-outlined">route</span>6,300 km Range</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="fleet-card">
+                <img src="https://images.unsplash.com/photo-1569629743817-70d8db6c323b?auto=format&fit=crop&w=700&q=80" alt="Aircraft wing view">
+                <div class="fleet-info">
+                    <h3>Stackly B787 Dreamliner</h3>
+                    <div class="fleet-specs">
+                        <div><span class="material-symbols-outlined">airline_seat_recline_normal</span>296 Seats</div>
+                        <div><span class="material-symbols-outlined">route</span>13,600 km Range</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="fleet-card">
+                <img src="https://images.unsplash.com/photo-1550005809-91ad75fb315f?auto=format&fit=crop&w=700&q=80" alt="Airplane in flight">
+                <div class="fleet-info">
+                    <h3>Stackly A350 XWB</h3>
+                    <div class="fleet-specs">
+                        <div><span class="material-symbols-outlined">airline_seat_recline_normal</span>325 Seats</div>
+                        <div><span class="material-symbols-outlined">route</span>15,000 km Range</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. TESTIMONIALS -->
+    <section class="test-section">
+        <div class="sec-head centered">
+            <div class="eyebrow">
+                <span class="dash"></span>
+                <p>Traveller Stories</p>
+            </div>
+            <div class="sec-head-left">
+                <h2>What Our <span>Passengers Say</span></h2>
+            </div>
+            <div class="sec-head-right">
+                <p>Real feedback from people who booked and flew with Stackly.</p>
+            </div>
+        </div>
+
+        <div class="test-grid">
+            <div class="test-card">
+                <div class="test-rating">★★★★★</div>
+                <p class="quote">Booking took less than five minutes and the fare was cheaper than every other site I checked. The confirmation email had everything I needed.</p>
+                <div class="test-user">
+                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Anitha Raj">
+                    <div>
+                        <h4>Anitha Raj</h4>
+                        <span>Chennai to Singapore</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="test-card">
+                <div class="test-rating">★★★★★</div>
+                <p class="quote">Had to reschedule at midnight and the support team sorted it out in minutes without any hassle. Genuinely impressed with the service.</p>
+                <div class="test-user">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Karthik Iyer">
+                    <div>
+                        <h4>Karthik Iyer</h4>
+                        <span>Chennai to Dubai</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="test-card">
+                <div class="test-rating">★★★★★</div>
+                <p class="quote">The seats were comfortable and boarding was smooth from start to finish. Will definitely book my next trip here again.</p>
+                <div class="test-user">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sneha Patel">
+                    <div>
+                        <h4>Sneha Patel</h4>
+                        <span>Chennai to London</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. NEWSLETTER / APP CTA -->
+    <section class="cta-section">
+        <div class="cta-box">
+            <div class="cta-text">
+                <p class="tag">Stay In The Loop</p>
+                <h2>Get Fare Drops Before Everyone Else</h2>
+                <p class="desc">Subscribe to our fare alerts and be the first to know when prices fall on your favourite routes.</p>
+
+                <div class="cta-form">
+                    <input type="email" placeholder="Enter your email address">
+                    <button>Subscribe</button>
+                </div>
+            </div>
+
+            <div class="cta-img">
+                <img src="https://images.unsplash.com/photo-1523301343968-6a6ebf63c672?auto=format&fit=crop&w=800&q=80" alt="Airplane above clouds">
+            </div>
         </div>
     </section>
 
