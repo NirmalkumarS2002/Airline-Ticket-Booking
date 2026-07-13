@@ -15,3 +15,11 @@ menubtn.addEventListener("click", () => {
     }
 
 })
+
+//errorpage
+
+document.querySelectorAll(".errorpage").forEach((error)=>{
+    error.addEventListener("click",()=>{
+        window.location.href="404.html"
+    })
+})

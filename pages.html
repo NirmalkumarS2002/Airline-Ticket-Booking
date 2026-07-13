@@ -395,6 +395,7 @@
 
     .gallery-item.tall {
         grid-row: span 2;
+        
     }
 
     .gallery-item.wide {
@@ -408,6 +409,10 @@
 
         .gallery-item.wide {
             grid-column: span 1;
+        }
+
+        .gallery-item.hid{
+            display: none;
         }
     }
 
@@ -431,6 +436,8 @@
         border-radius: 16px;
         padding: 28px;
         transition: .5s ease;
+        display: flex;
+        flex-direction: column;
     }
 
     .test-card:hover {
@@ -450,6 +457,7 @@
         font-size: 14.5px;
         line-height: 1.7;
         margin-bottom: 24px;
+        flex: 1;
     }
 
     .test-user {
@@ -620,7 +628,7 @@
                 <span class="material-symbols-outlined callicon">add_call</span>
                 <div>
                     <p>Call Us</p>
-                    <a href="tel:+911234567890">+91 1234567890</a>
+                    <a href="404.html">+91 1234567890</a>
                 </div>
             </div>
 
@@ -635,6 +643,17 @@
         </div>
 
     </header>
+
+  <section class="common-hero">
+    <h1>Our Pages</h1>
+    <p>
+        Explore all our services, travel solutions, booking options,
+        and customer support resources in one place.
+    </p>
+    <div>
+        <a href="index.html">Home</a> / <a href="pages.html">Pages</a>
+    </div>
+</section>
 
 
     <!-- 1. PAGES HERO -->
@@ -668,8 +687,8 @@
         </div>
 
         <div class="explore-grid">
-            <a href="#" class="explore-card">
-                <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=700&q=80" alt="Blog page">
+            <a href="404.html" class="explore-card">
+                <img src="./src/pg1.webp" alt="Blog page">
                 <div class="explore-overlay">
                     <span class="material-symbols-outlined icon">article</span>
                     <h3>Blog & News</h3>
@@ -677,8 +696,8 @@
                 </div>
             </a>
 
-            <a href="#" class="explore-card">
-                <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=700&q=80" alt="Gallery page">
+            <a href="404.html" class="explore-card">
+                <img src="./src/pg2.webp" alt="Gallery page">
                 <div class="explore-overlay">
                     <span class="material-symbols-outlined icon">photo_library</span>
                     <h3>Photo Gallery</h3>
@@ -686,8 +705,8 @@
                 </div>
             </a>
 
-            <a href="#" class="explore-card">
-                <img src="https://images.unsplash.com/photo-1556388158-158ea5ccacbc?auto=format&fit=crop&w=700&q=80" alt="Careers page">
+            <a href="404.html" class="explore-card">
+                <img src="./src/pg3.webp" alt="Careers page">
                 <div class="explore-overlay">
                     <span class="material-symbols-outlined icon">work</span>
                     <h3>Careers</h3>
@@ -695,8 +714,8 @@
                 </div>
             </a>
 
-            <a href="#" class="explore-card">
-                <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=700&q=80" alt="Testimonials page">
+            <a href="404.html" class="explore-card">
+                <img src="./src/pg4.webp" alt="Testimonials page">
                 <div class="explore-overlay">
                     <span class="material-symbols-outlined icon">reviews</span>
                     <h3>Testimonials</h3>
@@ -704,8 +723,8 @@
                 </div>
             </a>
 
-            <a href="#" class="explore-card">
-                <img src="https://images.unsplash.com/photo-1523301343968-6a6ebf63c672?auto=format&fit=crop&w=700&q=80" alt="FAQ page">
+            <a href="404.html" class="explore-card">
+                <img src="./src/pg5.webp" alt="FAQ page">
                 <div class="explore-overlay">
                     <span class="material-symbols-outlined icon">quiz</span>
                     <h3>FAQ</h3>
@@ -713,8 +732,8 @@
                 </div>
             </a>
 
-            <a href="#" class="explore-card">
-                <img src="https://images.unsplash.com/photo-1517479149777-5f3b1511d5ad?auto=format&fit=crop&w=700&q=80" alt="404 error page">
+            <a href="404.html" class="explore-card">
+                <img src="./src/pg6.webp" alt="404 error page">
                 <div class="explore-overlay">
                     <span class="material-symbols-outlined icon">error</span>
                     <h3>404 Page</h3>
@@ -742,34 +761,34 @@
         <div class="blog-grid">
             <div class="blog-card">
                 <div class="blog-img">
-                    <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=600&q=80" alt="Paris travel guide">
+                    <img src="./src/pg7.webp" alt="Paris travel guide">
                 </div>
                 <div class="blog-body">
                     <div class="blog-meta"><span class="material-symbols-outlined" style="font-size:16px">schedule</span>5 Min Read</div>
                     <h3>A First-Timer's Guide To Visiting Paris</h3>
-                    <a href="#">Read More <span class="material-symbols-outlined">arrow_right_alt</span></a>
+                    <a href="404.html">Read More <span class="material-symbols-outlined">arrow_right_alt</span></a>
                 </div>
             </div>
 
             <div class="blog-card">
                 <div class="blog-img">
-                    <img src="https://images.unsplash.com/photo-1517479149777-5f3b1511d5ad?auto=format&fit=crop&w=600&q=80" alt="Packing tips">
+                    <img src="./src/pg8.webp" alt="Packing tips">
                 </div>
                 <div class="blog-body">
                     <div class="blog-meta"><span class="material-symbols-outlined" style="font-size:16px">schedule</span>4 Min Read</div>
                     <h3>7 Packing Tips For Long-Haul Flights</h3>
-                    <a href="#">Read More <span class="material-symbols-outlined">arrow_right_alt</span></a>
+                    <a href="404.html">Read More <span class="material-symbols-outlined">arrow_right_alt</span></a>
                 </div>
             </div>
 
             <div class="blog-card">
                 <div class="blog-img">
-                    <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=600&q=80" alt="Dubai layover guide">
+                    <img src="./src/pg9.webp" alt="Dubai layover guide">
                 </div>
                 <div class="blog-body">
                     <div class="blog-meta"><span class="material-symbols-outlined" style="font-size:16px">schedule</span>6 Min Read</div>
                     <h3>Making The Most Of A Dubai Layover</h3>
-                    <a href="#">Read More <span class="material-symbols-outlined">arrow_right_alt</span></a>
+                    <a href="404.html">Read More <span class="material-symbols-outlined">arrow_right_alt</span></a>
                 </div>
             </div>
         </div>
@@ -792,23 +811,33 @@
 
         <div class="gallery-grid">
             <div class="gallery-item tall">
-                <img src="https://images.unsplash.com/photo-1569629743817-70d8db6c323b?auto=format&fit=crop&w=500&q=80" alt="Aircraft tarmac">
+                <img src="./src/pg10.webp" alt="Aircraft tarmac">
             </div>
             <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=500&q=80" alt="Tokyo street">
+                <img src="./src/pg11.webp" alt="Tokyo street">
             </div>
             <div class="gallery-item wide">
-                <img src="https://images.unsplash.com/photo-1540339832862-474599807836?auto=format&fit=crop&w=800&q=80" alt="Airport lounge">
+                <img src="./src/pg13.webp" alt="Airport lounge">
             </div>
             <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&w=500&q=80" alt="Bali beach">
+                <img src="./src/pg12.webp" alt="Bali beach">
             </div>
             <div class="gallery-item tall">
-                <img src="https://images.unsplash.com/photo-1517479149777-5f3b1511d5ad?auto=format&fit=crop&w=500&q=80" alt="Runway view">
+                <img src="./src/pg14.webp" alt="Runway view">
             </div>
-            <div class="gallery-item wide">
-                <img src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&w=800&q=80" alt="New York skyline">
+              <div class="gallery-item">
+                <img src="./src/pg15.webp" alt="Tokyo street">
             </div>
+              <div class="gallery-item">
+                <img src="./src/pg16.webp" alt="Tokyo street">
+            </div>
+               <div class="gallery-item">
+                <img src="./src/pg19.webp" alt="Tokyo street">
+            </div>
+               <div class="gallery-item hid">
+                <img src="./src/pg18.webp" alt="Tokyo street">
+            </div>
+            
         </div>
     </section>
 
@@ -832,9 +861,9 @@
                 <div class="test-rating">★★★★★</div>
                 <p class="quote">Booking took less than five minutes and the fare was cheaper than every other site I checked.</p>
                 <div class="test-user">
-                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Anitha Raj">
+                    <img src="./src/p3.webp" alt="Anitha Raj">
                     <div>
-                        <h4>Anitha Raj</h4>
+                        <h4>Anith Raj</h4>
                         <span>Chennai to Singapore</span>
                     </div>
                 </div>
@@ -844,9 +873,9 @@
                 <div class="test-rating">★★★★★</div>
                 <p class="quote">Had to reschedule at midnight and the support team sorted it out in minutes without any hassle.</p>
                 <div class="test-user">
-                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Karthik Iyer">
+                    <img src="./src/p2.webp" alt="Karthik Iyer">
                     <div>
-                        <h4>Karthik Iyer</h4>
+                        <h4>Karthika Iyer</h4>
                         <span>Chennai to Dubai</span>
                     </div>
                 </div>
@@ -856,9 +885,9 @@
                 <div class="test-rating">★★★★★</div>
                 <p class="quote">The seats were comfortable and boarding was smooth from start to finish, every single time.</p>
                 <div class="test-user">
-                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sneha Patel">
+                    <img src="./src/p1.webp" alt="Sneha Patel">
                     <div>
-                        <h4>Sneha Patel</h4>
+                        <h4>Snehan Patel</h4>
                         <span>Chennai to London</span>
                     </div>
                 </div>
@@ -881,7 +910,7 @@
             </div>
 
             <div class="cta-img">
-                <img src="https://images.unsplash.com/photo-1523301343968-6a6ebf63c672?auto=format&fit=crop&w=800&q=80" alt="Airplane above clouds">
+                <img src="./src/pg17.webp" alt="Airplane above clouds">
             </div>
         </div>
     </section>

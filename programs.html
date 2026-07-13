@@ -131,9 +131,11 @@
     }
 
     /* ===================== 1. PROGRAMS HERO ===================== */
-
+    .hero-wrap{
+          background: var(--panel);
+    }
     .hero-section {
-        background: var(--panel);
+      
         display: grid;
         grid-template-columns: 1fr 1fr;
         align-items: center;
@@ -158,7 +160,7 @@
         font-weight: 800;
     }
 
-    .hero-content p {
+    .hero-content>p {
         color: var(--gcolor);
         font-size: 16px;
         line-height: 1.7;
@@ -620,11 +622,13 @@
         border: none;
         background: white;
         color: var(--hcolor);
-        font-size: 15px;
+        font-size: clamp(13px,1.5vw,15px);
         font-weight: 700;
         cursor: pointer;
         transition: .4s ease;
     }
+
+     
 
     .cta-btn:hover {
         transform: translateY(-4px);
@@ -685,7 +689,7 @@
                 <span class="material-symbols-outlined callicon">add_call</span>
                 <div>
                     <p>Call Us</p>
-                    <a href="tel:+911234567890">+91 1234567890</a>
+                    <a href="404.html">+91 1234567890</a>
                 </div>
             </div>
 
@@ -701,9 +705,21 @@
 
     </header>
 
+        <section class="common-hero">
+    <h1>Our Programs</h1>
+    <p>
+        Explore our exclusive travel programs, loyalty rewards, seasonal offers,
+        and membership benefits designed to make every journey more rewarding.
+    </p>
+    <div>
+        <a href="index.html">Home</a> / <a href="programs.html">Programs</a>
+    </div>
+</section>
+
 
     <!-- 1. PROGRAMS HERO -->
-    <section class="hero-section">
+    <section class="hero-wrap">
+<div class="hero-section">
         <div class="hero-content">
             <div class="eyebrow">
                 <span class="dash"></span>
@@ -712,16 +728,17 @@
             <h1>Earn Miles Every Time You <span>Fly With Us</span></h1>
             <p>Join Stackly Rewards and turn every trip into miles you can redeem for flights, upgrades and exclusive travel perks.</p>
 
-            <button class="hero-btn">Join For Free <span class="material-symbols-outlined">arrow_right_alt</span></button>
+            <button class="hero-btn errorpage">Join For Free <span class="material-symbols-outlined">arrow_right_alt</span></button>
         </div>
 
         <div class="hero-media">
-            <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1000&q=80" alt="Airplane wing over clouds">
+            <img src="./src/pm0.webp" alt="Airplane wing over clouds">
             <div class="hero-badge">
                 <span class="material-symbols-outlined">workspace_premium</span>
                 <p>4.2M Members</p>
             </div>
         </div>
+    </div>
     </section>
 
     <!-- 2. MEMBERSHIP TIERS -->
@@ -740,7 +757,7 @@
         </div>
 
         <div class="tiers-grid">
-            <div class="tier-card">
+            <div class="tier-card errorpage">
                 <span class="material-symbols-outlined tier-icon">military_tech</span>
                 <h3>Silver</h3>
                 <p class="tier-sub">0 – 24,999 miles per year</p>
@@ -751,7 +768,7 @@
                 </ul>
             </div>
 
-            <div class="tier-card featured">
+            <div class="tier-card featured errorpage">
                 <span class="tier-tag">Most Popular</span>
                 <span class="material-symbols-outlined tier-icon">workspace_premium</span>
                 <h3>Gold</h3>
@@ -764,7 +781,7 @@
                 </ul>
             </div>
 
-            <div class="tier-card">
+            <div class="tier-card errorpage">
                 <span class="material-symbols-outlined tier-icon">diamond</span>
                 <h3>Platinum</h3>
                 <p class="tier-sub">75,000+ miles per year</p>
@@ -824,7 +841,7 @@
     <section class="perks-section">
         <div class="perks-grid">
             <div class="perks-media">
-                <img src="https://images.unsplash.com/photo-1540339832862-474599807836?auto=format&fit=crop&w=800&q=80" alt="Airport lounge">
+                <img src="./src/pm2.webp" alt="Airport lounge">
             </div>
 
             <div class="perks-text">
@@ -879,7 +896,7 @@
         <div class="partners-grid">
             <div class="partner-card">
                 <div class="partner-img">
-                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80" alt="Hotel partner">
+                    <img src="./src/pm3.webp" alt="Hotel partner">
                 </div>
                 <div class="partner-body">
                     <span class="tag">Hotels</span>
@@ -890,7 +907,7 @@
 
             <div class="partner-card">
                 <div class="partner-img">
-                    <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=600&q=80" alt="Car rental partner">
+                    <img src="./src/pm4.webp" alt="Car rental partner">
                 </div>
                 <div class="partner-body">
                     <span class="tag">Car Rentals</span>
@@ -901,7 +918,7 @@
 
             <div class="partner-card">
                 <div class="partner-img">
-                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=600&q=80" alt="Credit card partner">
+                    <img src="./src/pm5.webp" alt="Credit card partner">
                 </div>
                 <div class="partner-body">
                     <span class="tag">Co-Brand Card</span>
@@ -920,11 +937,11 @@
                 <h2>Join Stackly Rewards In Under A Minute</h2>
                 <p class="desc">Sign up for free and start earning miles on your very next flight booking.</p>
 
-                <button class="cta-btn">Create Free Account <span class="material-symbols-outlined">arrow_right_alt</span></button>
+                <button class="cta-btn errorpage">Create Free Account <span class="material-symbols-outlined">arrow_right_alt</span></button>
             </div>
 
             <div class="cta-img">
-                <img src="https://images.unsplash.com/photo-1569629743817-70d8db6c323b?auto=format&fit=crop&w=800&q=80" alt="Aircraft on tarmac">
+                <img src="./src/pm6.webp" alt="Aircraft on tarmac">
             </div>
         </div>
     </section>

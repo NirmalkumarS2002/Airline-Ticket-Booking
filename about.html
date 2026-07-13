@@ -13,11 +13,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-        <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
@@ -133,6 +133,9 @@
     }
 
     /* ===================== 1. ABOUT HERO ===================== */
+    .hero-wrap {
+        background: var(--panel);
+    }
 
     .hero-section {
         background: var(--panel);
@@ -160,7 +163,7 @@
         font-weight: 800;
     }
 
-    .hero-content p {
+    .hero-content>p {
         color: var(--gcolor);
         font-size: 16px;
         line-height: 1.7;
@@ -310,7 +313,7 @@
         font-weight: 800;
     }
 
-    .story-text p {
+    .story-text>p {
         color: var(--gcolor);
         font-size: 15px;
         line-height: 1.75;
@@ -462,7 +465,10 @@
     }
 
     .team-img {
-        height: 260px;
+        width: 100%;
+        height: 320px;
+        object-fit: cover;
+        object-position: center top;
     }
 
     .team-img img {
@@ -604,7 +610,7 @@
 
         <div class="navlinks">
             <ul class="menus">
-                <li ><a href="index.html">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li class="show"><a href="about.html" class="active">About Us<span>+</span></a></li>
                 <li><a href="programs.html">Programs<span>+</span></a></li>
                 <li><a href="pages.html">Pages<span>+</span></a></li>
@@ -618,7 +624,7 @@
                 <span class="material-symbols-outlined callicon">add_call</span>
                 <div>
                     <p>Call Us</p>
-                    <a href="tel:+911234567890">+91 1234567890</a>
+                    <a href="404.html">+91 1234567890</a>
                 </div>
             </div>
 
@@ -634,42 +640,55 @@
 
     </header>
 
+    <section class="common-hero">
+        <h1>About Us</h1>
+        <p>
+            We make air travel simple, fast, and affordable by helping travelers
+            find the best flight deals and book tickets with confidence.
+        </p>
+        <div>
+            <a href="index.html">Home</a> / <a href="about.html">About</a>
+        </div>
+    </section>
+
 
     <!-- 1. ABOUT HERO -->
-    <section class="hero-section">
-        <div class="hero-content">
-            <div class="eyebrow">
-                <span class="dash"></span>
-                <p>About Stackly</p>
-            </div>
-            <h1>Connecting people to the places that <span>matter most</span></h1>
-            <p>For over a decade, Stackly Airline has been flying passengers safely and comfortably to destinations
-                across the globe, one journey at a time.</p>
+    <section class="hero-wrap">
+        <div class="hero-section">
+            <div class="hero-content">
+                <div class="eyebrow">
+                    <span class="dash"></span>
+                    <p>About Stackly</p>
+                </div>
+                <h1>Connecting people to the places that <span>matter most</span></h1>
+                <p>For over a decade, Stackly Airline has been flying passengers safely and comfortably to destinations
+                    across the globe, one journey at a time.</p>
 
-            <div class="hero-stats">
-                <div>
-                    <h3>12+</h3>
-                    <p>Years Flying</p>
-                </div>
-                <div>
-                    <h3>85</h3>
-                    <p>Destinations</p>
-                </div>
-                <div>
-                    <h3>4.2M</h3>
-                    <p>Happy Travellers</p>
+                <div class="hero-stats">
+                    <div>
+                        <h3>12+</h3>
+                        <p>Years Flying</p>
+                    </div>
+                    <div>
+                        <h3>85</h3>
+                        <p>Destinations</p>
+                    </div>
+                    <div>
+                        <h3>4.2M</h3>
+                        <p>Happy Travellers</p>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="hero-media">
-            <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1000&q=80"
-                alt="Airplane wing over clouds">
-            <div class="hero-badge">
-                <span class="material-symbols-outlined">flight</span>
-                <div>
-                    <h4>200+ Flights</h4>
-                    <p>Operated Daily</p>
+            <div class="hero-media">
+                <img src="./src/abt-bg2.webp"
+                    alt="Airplane wing over clouds">
+                <div class="hero-badge">
+                    <span class="material-symbols-outlined">flight</span>
+                    <div>
+                        <h4>200+ Flights</h4>
+                        <p>Operated Daily</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -680,11 +699,11 @@
         <div class="story-grid">
             <div class="story-images">
                 <div class="story-img-main">
-                    <img src="https://images.unsplash.com/photo-1569629743817-70d8db6c323b?auto=format&fit=crop&w=800&q=80"
+                    <img src="./src/abt2.webp"
                         alt="Aircraft on tarmac">
                 </div>
                 <div class="story-img-sub">
-                    <img src="https://images.unsplash.com/photo-1517479149777-5f3b1511d5ad?auto=format&fit=crop&w=700&q=80"
+                    <img src="./src/ab1.webp"
                         alt="Aircraft runway view">
                 </div>
             </div>
@@ -789,8 +808,7 @@
         <div class="team-grid">
             <div class="team-card">
                 <div class="team-img">
-                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=500&q=80"
-                        alt="Chief Executive Officer">
+                    <img src="./src/p1.webp" alt="Chief Executive Officer">
                 </div>
                 <div class="team-info">
                     <h3>Arvind Menon</h3>
@@ -800,8 +818,7 @@
 
             <div class="team-card">
                 <div class="team-img">
-                    <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=500&q=80"
-                        alt="Chief Operating Officer">
+                    <img src="./src/p2.webp" alt="Chief Operating Officer">
                 </div>
                 <div class="team-info">
                     <h3>Priya Nair</h3>
@@ -811,8 +828,7 @@
 
             <div class="team-card">
                 <div class="team-img">
-                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=500&q=80"
-                        alt="Head of Flight Operations">
+                    <img src="./src/p3.webp" alt="Head of Flight Operations">
                 </div>
                 <div class="team-info">
                     <h3>Rohan Das</h3>
@@ -822,8 +838,7 @@
 
             <div class="team-card">
                 <div class="team-img">
-                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=500&q=80"
-                        alt="Head of Customer Experience">
+                    <img src="./src/p4.webp" alt="Head of Customer Experience">
                 </div>
                 <div class="team-info">
                     <h3>Meera Shah</h3>
@@ -842,18 +857,17 @@
                 <p class="desc">We're always looking for pilots, cabin crew and ground staff who share our passion for
                     safe, seamless travel.</p>
 
-                <button class="cta-btn">View Open Roles <span
+                <button class="cta-btn errorpage">View Open Roles <span
                         class="material-symbols-outlined">arrow_right_alt</span></button>
             </div>
 
             <div class="cta-img">
-                <img src="https://images.unsplash.com/photo-1556388158-158ea5ccacbc?auto=format&fit=crop&w=800&q=80"
-                    alt="Airline cabin crew">
+                <img src="./src/ab10.webp" alt="Airline cabin crew">
             </div>
         </div>
     </section>
 
-        <footer class="footer">
+    <footer class="footer">
         <div class="footer-main">
             <div class="footer-logocontainer">
                 <a href="index.html"><img src="./src/logo.webp" alt="company Logo" class="footer-logo"></a>
@@ -935,7 +949,7 @@
         </div>
     </footer>
 
-        <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

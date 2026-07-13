@@ -324,7 +324,8 @@
     display: flex;
     align-items: center;
     gap: 5px;
-    font-size: 15px;
+    font-size: 14px;
+    text-wrap: nowrap;
     margin-bottom: 5px;
     color: white;
 }
@@ -336,7 +337,7 @@
 
 .com-detail a {
     text-decoration: none;
-    font-size: 15px;
+    font-size: 14px;
     color: white;
     transition: .5s ease;
 }
@@ -516,3 +517,53 @@
         gap: 40px;
     }
 }
+
+
+
+/* common hero */
+
+.common-hero{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 60vh;
+    background: linear-gradient(125deg,rgba(0, 0, 0, 0.87),rgba(0, 0, 0, 0.404)),url("./src/abt-bg2.webp");
+    background-position:center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.common-hero h1{
+    font-size: clamp(25px,3.5vw,40px);
+    margin-bottom: 15px;
+    color: white;
+}
+
+.common-hero p{
+    font-size: clamp(14px,1.5vw,16px);
+    max-width: 600px;
+    text-align: center;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    color: rgb(204, 204, 204);
+}
+
+.common-hero div a{
+    text-decoration: none;
+}
+
+.common-hero div{
+    color: white;
+}
+
+.common-hero div a:first-child{
+    color: gray;
+    font-size: 13px;
+}
+
+.common-hero div a:last-child{
+    color: var(--hcolor);
+    font-size: 16px;
+}
+
