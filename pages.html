@@ -1,0 +1,404 @@
+<!-- ============================================================
+     SKYFARE AIRLINES — 8 HOME PAGE SECTIONS
+     Paste this block between your <header> and <footer>.
+     Same tokens as your existing theme:
+       --pcolor: #EF644C   --hcolor: #ff4e2e
+       Dark panels: #1F1F1F   Display font: Outfit   Body font: Noto Sans
+       Buttons reuse the .page-btn sliding-fill style.
+   ============================================================ -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airline Ticket Booking Home-Page</title>
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,-50..200" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+    :root {
+        --pcolor: #7B2FF7;
+        --hcolor: #9147FF;
+        --dark: #1F1F1F;
+    }
+
+    .pg-wrap {
+        margin: 10px;
+        font-family: "Noto Sans", sans-serif;
+    }
+
+    .pg-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--pcolor);
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-bottom: 14px;
+    }
+
+    .pg-eyebrow::before {
+        content: "";
+        width: 24px;
+        height: 2px;
+        background: var(--pcolor);
+    }
+
+    .pg-heading {
+        font-family: "Outfit", sans-serif;
+        font-weight: 300;
+        font-size: clamp(28px, 4vw, 46px);
+        max-width: 650px;
+        line-height: 1.2;
+    }
+
+    .pg-heading b { font-weight: 600; color: var(--pcolor); }
+
+    .pg-btn {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 30px;
+        width: clamp(190px, 22vw, 230px);
+        border: 1px solid var(--pcolor);
+        border-radius: 10px;
+        background: transparent;
+        color: inherit;
+        overflow: hidden;
+        cursor: pointer;
+        transition: .8s ease;
+        z-index: 1;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    .pg-btn::before {
+        content: "";
+        position: absolute;
+        top: 0; right: 0;
+        width: 0; height: 100%;
+        background: var(--pcolor);
+        transition: width .4s ease;
+        z-index: -1;
+    }
+    .pg-btn:hover::before { width: 100%; }
+    .pg-btn span { background: var(--pcolor); padding: 10px; border-radius: 10px; z-index: 2; color: #fff; }
+    .pg-btn.on-dark { color: #fff; }
+    .pg-btn.on-light { color: var(--dark); }
+
+    /* ---------- 1. PROGRAMS HERO ---------- */
+    .programs-hero {
+        border-radius: 20px;
+        overflow: hidden;
+        position: relative;
+        min-height: 380px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+        background-image: linear-gradient(rgba(31,31,31,0.7), rgba(31,31,31,0.7)), url("https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1400&q=80");
+        background-size: cover;
+        background-position: center;
+        padding: 60px;
+    }
+    .programs-hero .pg-heading { color: #fff; margin: 0 auto 16px; }
+    .programs-hero p { color: #ddd; font-size: 14px; max-width: 460px; line-height: 1.7; }
+    @media (max-width: 700px) { .programs-hero { padding: 40px 25px; min-height: 300px; } }
+
+    /* ---------- 2. MEMBERSHIP TIERS (comparison table, distinct layout) ---------- */
+    .tiers-section { padding: 90px 40px; }
+    .tiers-section .pg-heading { margin: 0 auto 45px; text-align: center; }
+    .tiers-table-wrap { overflow-x: auto; border-radius: 20px; border: 1px solid #eee; }
+    .tiers-table { width: 100%; border-collapse: collapse; min-width: 700px; }
+    .tiers-table th, .tiers-table td { padding: 20px 24px; text-align: left; font-size: 13px; border-bottom: 1px solid #eee; }
+    .tiers-table thead th { background: var(--dark); color: #fff; font-family: "Outfit", sans-serif; font-weight: 500; font-size: 15px; }
+    .tiers-table thead th:first-child { border-top-left-radius: 20px; }
+    .tiers-table thead th:last-child { border-top-right-radius: 20px; }
+    .tiers-table tbody tr:last-child td { border-bottom: none; }
+    .tiers-table td:first-child { color: #888; font-weight: 600; }
+    .tiers-table .check { color: var(--pcolor); font-size: 18px; }
+    .tier-col-highlight { background: #faf5ff; }
+    @media (max-width: 560px) { .tiers-section { padding: 50px 20px; } }
+
+    /* ---------- 3. HOW MILES WORK (horizontal flow, distinct from numbered-card pattern) ---------- */
+    .miles-section {
+        background: var(--dark);
+        border-radius: 20px;
+        padding: 80px 40px;
+    }
+    .miles-section .pg-heading { color: #fff; margin: 0 auto 55px; text-align: center; }
+    .miles-flow { display: flex; align-items: flex-start; justify-content: space-between; position: relative; }
+    .miles-flow::before {
+        content: "";
+        position: absolute;
+        top: 28px;
+        left: 8%;
+        width: 84%;
+        height: 1px;
+        background: #3a3a3a;
+    }
+    .miles-node { flex: 1; text-align: center; padding: 0 12px; position: relative; }
+    .miles-node .icon-circle {
+        width: 56px; height: 56px;
+        border-radius: 50%;
+        background: var(--pcolor);
+        color: #fff;
+        display: flex; align-items: center; justify-content: center;
+        margin: 0 auto 20px;
+        font-size: 24px;
+        position: relative;
+        z-index: 1;
+    }
+    .miles-node h4 { color: #fff; font-family: "Outfit", sans-serif; font-weight: 500; font-size: 15px; margin-bottom: 8px; }
+    .miles-node p { color: #aaa; font-size: 12px; line-height: 1.6; max-width: 180px; margin: 0 auto; }
+    @media (max-width: 900px) {
+        .miles-flow { flex-direction: column; gap: 30px; }
+        .miles-flow::before { display: none; }
+        .miles-node p { max-width: none; }
+    }
+    @media (max-width: 560px) { .miles-section { padding: 50px 20px; } }
+
+    /* ---------- 4. CORPORATE & GROUP TRAVEL (split banner) ---------- */
+    .corp-section {
+        margin: 10px;
+        border-radius: 20px;
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .corp-img { min-height: 380px; background-size: cover; background-position: center; }
+    .corp-content { padding: 60px 50px; display: flex; flex-direction: column; justify-content: center; }
+    .corp-content p { font-size: 14px; color: #666; margin: 16px 0 26px; line-height: 1.7; max-width: 420px; }
+    .corp-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 28px; }
+    .corp-list div { display: flex; align-items: center; gap: 10px; font-size: 13px; color: #444; }
+    .corp-list .material-symbols-outlined { color: var(--pcolor); font-size: 18px; }
+    @media (max-width: 900px) { .corp-section { grid-template-columns: 1fr; } .corp-img { min-height: 240px; } .corp-content { padding: 40px 25px; } }
+
+    /* ---------- 5. DISCOUNT PROGRAMS (icon strip, distinct from card-grid pattern) ---------- */
+    .discount-section { padding: 90px 40px; }
+    .discount-section .pg-heading { margin: 0 auto 50px; text-align: center; }
+    .discount-strip { display: flex; border: 1px solid #eee; border-radius: 20px; overflow: hidden; }
+    .discount-item {
+        flex: 1;
+        padding: 35px 25px;
+        text-align: center;
+        border-right: 1px solid #eee;
+        transition: .4s ease;
+    }
+    .discount-item:last-child { border-right: none; }
+    .discount-item:hover { background: #faf5ff; }
+    .discount-item .material-symbols-outlined {
+        width: 50px; height: 50px;
+        border-radius: 50%;
+        background: var(--pcolor);
+        color: #fff;
+        display: flex; align-items: center; justify-content: center;
+        margin: 0 auto 16px;
+        font-size: 22px;
+    }
+    .discount-item h4 { font-family: "Outfit", sans-serif; font-weight: 500; font-size: 15px; margin-bottom: 8px; }
+    .discount-item p { font-size: 12px; color: #666; line-height: 1.6; }
+    @media (max-width: 900px) { .discount-strip { flex-direction: column; } .discount-item { border-right: none; border-bottom: 1px solid #eee; } .discount-item:last-child { border-bottom: none; } }
+    @media (max-width: 560px) { .discount-section { padding: 50px 20px; } }
+
+    /* ---------- 6. PARTNER AIRLINES & CTA (logo strip + banner) ---------- */
+    .partners-section { padding: 20px 40px 60px; text-align: center; }
+    .partners-section .pg-heading { margin: 0 auto 40px; }
+    .partners-strip { display: flex; justify-content: center; align-items: center; gap: 50px; flex-wrap: wrap; opacity: .8; }
+    .partners-strip span { font-family: "Outfit", sans-serif; font-weight: 600; font-size: 18px; color: #999; }
+
+    .programs-cta {
+        border-radius: 20px;
+        margin: 30px 10px 10px;
+        overflow: hidden;
+        position: relative;
+        min-height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+        background-image: linear-gradient(rgba(31,31,31,0.85), rgba(31,31,31,0.85)), url("https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1400&q=80");
+        background-size: cover;
+        background-position: center;
+        padding: 50px;
+    }
+    .programs-cta .pg-heading { color: #fff; margin: 0 auto 26px; }
+    @media (max-width: 700px) { .partners-strip { gap: 25px; } }
+</style>
+</head>
+   
+
+
+<body>
+    <!-- ============================================================
+     SKYFARE AIRLINES — 6 PROGRAMS PAGE SECTIONS
+     Paste this block between your <header> and <footer>.
+     Same tokens as your SkyFare theme:
+       --pcolor: #7B2FF7   --hcolor: #9147FF
+       Dark panels: #1F1F1F   Display font: Outfit   Body font: Noto Sans
+       Buttons reuse the .page-btn sliding-fill style.
+   ============================================================ -->
+
+
+
+<!-- ============ 1. PROGRAMS HERO ============ -->
+<section class="pg-wrap programs-hero">
+    <h2 class="pg-heading">Programs built to <b>reward every mile</b></h2>
+    <p>From frequent flyer miles to corporate travel plans, find the SkyFare program that fits how you fly.</p>
+</section>
+
+<!-- ============ 2. MEMBERSHIP TIERS ============ -->
+<section class="pg-wrap tiers-section">
+    <h2 class="pg-heading">Compare membership <b>tiers</b></h2>
+    <div class="tiers-table-wrap">
+        <table class="tiers-table">
+            <thead>
+                <tr>
+                    <th>Benefit</th>
+                    <th>Silver</th>
+                    <th class="tier-col-highlight">Gold</th>
+                    <th>Platinum</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Miles Earned per Flight</td>
+                    <td>1x</td>
+                    <td class="tier-col-highlight">1.5x</td>
+                    <td>2x</td>
+                </tr>
+                <tr>
+                    <td>Priority Check-in</td>
+                    <td><span class="material-symbols-outlined check">close</span></td>
+                    <td class="tier-col-highlight"><span class="material-symbols-outlined check">check_circle</span></td>
+                    <td><span class="material-symbols-outlined check">check_circle</span></td>
+                </tr>
+                <tr>
+                    <td>Free Seat Selection</td>
+                    <td><span class="material-symbols-outlined check">check_circle</span></td>
+                    <td class="tier-col-highlight"><span class="material-symbols-outlined check">check_circle</span></td>
+                    <td><span class="material-symbols-outlined check">check_circle</span></td>
+                </tr>
+                <tr>
+                    <td>Lounge Access</td>
+                    <td><span class="material-symbols-outlined check">close</span></td>
+                    <td class="tier-col-highlight"><span class="material-symbols-outlined check">close</span></td>
+                    <td><span class="material-symbols-outlined check">check_circle</span></td>
+                </tr>
+                <tr>
+                    <td>Extra Baggage Allowance</td>
+                    <td>+5kg</td>
+                    <td class="tier-col-highlight">+10kg</td>
+                    <td>+20kg</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- ============ 3. HOW MILES WORK ============ -->
+<section class="pg-wrap miles-section">
+    <h2 class="pg-heading">How SkyFare <b>Miles</b> work</h2>
+    <div class="miles-flow">
+        <div class="miles-node">
+            <div class="icon-circle"><span class="material-symbols-outlined">person_add</span></div>
+            <h4>Join Free</h4>
+            <p>Sign up for a SkyFare Miles account in under a minute.</p>
+        </div>
+        <div class="miles-node">
+            <div class="icon-circle"><span class="material-symbols-outlined">flight</span></div>
+            <h4>Fly & Earn</h4>
+            <p>Collect miles on every flight, based on distance and fare class.</p>
+        </div>
+        <div class="miles-node">
+            <div class="icon-circle"><span class="material-symbols-outlined">trending_up</span></div>
+            <h4>Move Up Tiers</h4>
+            <p>Unlock Silver, Gold or Platinum status as your miles grow.</p>
+        </div>
+        <div class="miles-node">
+            <div class="icon-circle"><span class="material-symbols-outlined">redeem</span></div>
+            <h4>Redeem Rewards</h4>
+            <p>Use miles for flights, upgrades, or partner hotel stays.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ============ 4. CORPORATE & GROUP TRAVEL ============ -->
+<section class="corp-section">
+    <div class="corp-img" style="background-image:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80')"></div>
+    <div class="corp-content">
+        <span class="pg-eyebrow">For Businesses</span>
+        <h2 class="pg-heading">Corporate & Group Travel Program</h2>
+        <p>Manage employee travel, track spend and unlock volume discounts with a dedicated SkyFare business account.</p>
+        <div class="corp-list">
+            <div><span class="material-symbols-outlined">check_circle</span> Centralized billing for your whole team</div>
+            <div><span class="material-symbols-outlined">check_circle</span> Discounted group fares for 10+ travelers</div>
+            <div><span class="material-symbols-outlined">check_circle</span> Dedicated corporate account manager</div>
+        </div>
+        <a href="#" class="pg-btn on-light">Set Up Business Account <span class="material-symbols-outlined">arrow_outward</span></a>
+    </div>
+</section>
+
+<!-- ============ 5. DISCOUNT PROGRAMS ============ -->
+<section class="pg-wrap discount-section">
+    <h2 class="pg-heading">Extra savings for <b>specific travelers</b></h2>
+    <div class="discount-strip">
+        <div class="discount-item">
+            <span class="material-symbols-outlined">school</span>
+            <h4>Student Discount</h4>
+            <p>Verified students save on fares to and from home during term breaks.</p>
+        </div>
+        <div class="discount-item">
+            <span class="material-symbols-outlined">military_tech</span>
+            <h4>Military Discount</h4>
+            <p>Active and retired service members get reduced fares year-round.</p>
+        </div>
+        <div class="discount-item">
+            <span class="material-symbols-outlined">family_restroom</span>
+            <h4>Family Program</h4>
+            <p>Pooled miles across family accounts, redeemable by anyone in the family.</p>
+        </div>
+        <div class="discount-item">
+            <span class="material-symbols-outlined">elderly</span>
+            <h4>Senior Fares</h4>
+            <p>Special pricing and flexible rebooking for travelers 60 and above.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ============ 6. PARTNER AIRLINES & CTA ============ -->
+<section class="pg-wrap partners-section">
+    <span class="pg-eyebrow">Global Network</span>
+    <h2 class="pg-heading">Redeem miles across our <b>partner airlines</b></h2>
+    <div class="partners-strip">
+        <span>AeroLink</span>
+        <span>Meridian Air</span>
+        <span>Northwind</span>
+        <span>Continental Wings</span>
+        <span>Pacific Route</span>
+    </div>
+</section>
+
+<section class="programs-cta">
+    <span class="pg-eyebrow">Ready to Start Earning</span>
+    <h2 class="pg-heading">Join SkyFare Miles today, it's free</h2>
+    <a href="#" class="pg-btn on-dark">Join Now <span class="material-symbols-outlined">arrow_outward</span></a>
+</section>
+
+</body>
+
+</html>

@@ -32,8 +32,13 @@
 
 
     :root {
-        --pcolor: #603BFE
+        --pcolor: #603BFE;
+        --pcolor1: #7B2FF7;
+        --hcolor: #9147FF;
+        --dark: #1F1F1F;
+        --gcolor: rgb(197, 197, 197);
     }
+
 
     .hero-section {
         min-height: 100vh;
@@ -43,8 +48,7 @@
         justify-content: space-between;
         gap: 50px;
         padding: 120px 50px;
-
-        background: linear-gradient(125deg, rgba(0, 0, 0, 0.514), rgba(0, 0, 0, 0.63)), url("./src/hero-bg5.webp");
+        background: linear-gradient(125deg, rgba(0, 0, 0, 0.664), rgba(0, 0, 0, 0.747)), url("./src/hero-bg5.webp");
         background-size: cover;
         background-repeat: no-repeat;
         background-position: top center;
@@ -59,7 +63,7 @@
     }
 
     .hero-tag p {
-        color: white;
+        color: var(--hcolor);
         font-size: clamp(13px, 1.4vw, 14px);
         padding: clamp(4px, 0.5vw, 6px) 20px;
     }
@@ -77,10 +81,14 @@
         margin-bottom: 20px;
     }
 
-    .hero-text p {
+    .hero-text h1 span {
+        color: var(--hcolor);
+    }
+
+    .hero-text>p {
         font-size: clamp(15px, 1.7vw, 18px);
         max-width: 600px;
-        color: white;
+        color: rgb(197, 197, 197);
         line-height: 1.5;
     }
 
@@ -100,19 +108,24 @@
     .herocard {
         display: flex;
         flex-direction: column;
+        background: rgba(128, 128, 128, 0.233);
+         backdrop-filter: blur(5px);
         gap: 10px;
-        border: 1px solid white;
+        border: 1px solid rgba(128, 128, 128, 0.384); 
         padding: 10px;
-        border-radius: 7px;
+        border-radius: 15px;
         width: 100%;
         min-width: 180px;
-
-
+        transition: .6s ease;
     }
+
+        .herocard:hover{
+            transform: translateY(-8px);
+        }
 
     .herocard span {
         font-size: 70px;
-        color: white;
+        color: var(--hcolor);
     }
 
     .herocard h1 {
@@ -121,7 +134,7 @@
     }
 
     .herocard p {
-        color: white;
+        color: var(--gcolor);
         font-size: 15px;
         line-height: 1.5;
 
@@ -147,10 +160,19 @@
 
     .start-booking a {
         text-decoration: none;
-        color: white;
+        color: var(--hcolor);
         display: flex;
+        font-weight: bold;
         align-items: center;
         gap: 10px;
+        text-transform: uppercase;
+        font-size: 17px;
+        transition: .6s ease;
+    }
+
+    .start-booking a:hover{
+      color: white;
+      transform: scale(0.9);
     }
 
     .video-tag {
@@ -159,19 +181,33 @@
         justify-content: center;
     }
 
-    .video-tag a {
+
+
+    .video-btn {
         text-decoration: none;
         min-height: 100px;
         width: 100px;
         border-radius: 50%;
-        border: 1px solid white;
+        border: 1px solid var(--hcolor);
         display: flex;
         align-items: center;
         justify-content: center;
+        transition: .6s ease;
     }
+
 
     .video-btn span {
         font-size: 40px;
+        color: var(--hcolor);
+        transition: .6s ease;
+    }
+
+    .video-btn:hover {
+        transform: scale(0.8);
+        border-color: white;
+    }
+
+    .video-btn:hover span {
         color: white;
     }
 
@@ -290,8 +326,8 @@
             </div>
 
             <h1>
-                Explore the World with Stackly
-                Airline
+                Explore the World with <span>Stackly Airline</span>
+
             </h1>
 
             <p>

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airline Ticket Booking Home-Page</title>
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,-50..200" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+    :root {
+        --pcolor: #7B2FF7;
+        --hcolor: #9147FF;
+        --dark: #1F1F1F;
+    }
+
+    .ct-wrap { margin: 10px; font-family: "Noto Sans", sans-serif; }
+
+    .ct-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--pcolor);
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-bottom: 14px;
+    }
+    .ct-eyebrow::before { content: ""; width: 24px; height: 2px; background: var(--pcolor); }
+
+    .ct-heading {
+        font-family: "Outfit", sans-serif;
+        font-weight: 300;
+        font-size: clamp(28px, 4vw, 46px);
+        max-width: 650px;
+        line-height: 1.2;
+    }
+    .ct-heading b { font-weight: 600; color: var(--pcolor); }
+
+    .ct-btn {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 30px;
+        width: clamp(190px, 22vw, 230px);
+        border: 1px solid var(--pcolor);
+        border-radius: 10px;
+        background: transparent;
+        color: inherit;
+        overflow: hidden;
+        cursor: pointer;
+        transition: .8s ease;
+        z-index: 1;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    .ct-btn::before {
+        content: "";
+        position: absolute;
+        top: 0; right: 0;
+        width: 0; height: 100%;
+        background: var(--pcolor);
+        transition: width .4s ease;
+        z-index: -1;
+    }
+    .ct-btn:hover::before { width: 100%; }
+    .ct-btn span { background: var(--pcolor); padding: 10px; border-radius: 10px; z-index: 2; color: #fff; }
+    .ct-btn.on-dark { color: #fff; }
+    .ct-btn.on-light { color: var(--dark); }
+
+    /* ---------- 1. CONTACT HERO (split w/ floating card, distinct from full banner) ---------- */
+    .ct-hero { padding: 20px 0 30px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: center; }
+    .ct-hero-img { position: relative; border-radius: 20px; overflow: hidden; height: 420px; }
+    .ct-hero-img img { width: 100%; height: 100%; object-fit: cover; }
+    .ct-float-card {
+        position: absolute;
+        bottom: 24px;
+        right: -24px;
+        background: var(--dark);
+        border-radius: 16px;
+        padding: 22px 26px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        max-width: 260px;
+    }
+    .ct-float-card .material-symbols-outlined { color: var(--pcolor); font-size: 26px; }
+    .ct-float-card h4 { color: #fff; font-family: "Outfit", sans-serif; font-size: 14px; margin-bottom: 4px; }
+    .ct-float-card p { color: #aaa; font-size: 12px; }
+    .ct-hero-text p { margin: 18px 0 30px; font-size: 14px; color: #666; line-height: 1.7; max-width: 420px; }
+    @media (max-width: 900px) { .ct-hero { grid-template-columns: 1fr; } .ct-hero-img { height: 300px; } .ct-float-card { right: 10px; } }
+
+    /* ---------- 2. GET IN TOUCH (vertical list, distinct from card-grid) ---------- */
+    .touch-section {
+        background: var(--dark);
+        border-radius: 20px;
+        padding: 70px 50px;
+    }
+    .touch-row { display: flex; align-items: center; justify-content: space-between; padding: 26px 0; border-bottom: 1px solid #333; }
+    .touch-row:first-of-type { padding-top: 0; }
+    .touch-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .touch-left { display: flex; align-items: center; gap: 20px; }
+    .touch-left .material-symbols-outlined {
+        width: 50px; height: 50px;
+        border-radius: 50%;
+        background: var(--pcolor);
+        color: #fff;
+        display: flex; align-items: center; justify-content: center;
+        font-size: 22px;
+        flex-shrink: 0;
+    }
+    .touch-left h4 { color: #fff; font-family: "Outfit", sans-serif; font-weight: 500; font-size: 16px; margin-bottom: 4px; }
+    .touch-left span { color: #999; font-size: 12px; }
+    .touch-value { color: #fff; font-family: "Outfit", sans-serif; font-size: 17px; font-weight: 500; }
+    @media (max-width: 700px) { .touch-section { padding: 50px 22px; } .touch-row { flex-direction: column; align-items: flex-start; gap: 14px; } }
+
+    /* ---------- 3. AIRPORT HELP DESKS (list rows, distinct from card grid used elsewhere) ---------- */
+    .desks-section { padding: 90px 40px; }
+    .desks-section .ct-heading { margin: 0 auto 45px; text-align: center; }
+    .desk-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 24px 28px;
+        border: 1px solid #eee;
+        border-radius: 16px;
+        margin-bottom: 14px;
+        transition: .3s ease;
+    }
+    .desk-row:hover { border-color: var(--pcolor); background: #faf5ff; }
+    .desk-row:last-child { margin-bottom: 0; }
+    .desk-left { display: flex; align-items: center; gap: 18px; }
+    .desk-left .material-symbols-outlined { color: var(--pcolor); font-size: 24px; }
+    .desk-left h4 { font-family: "Outfit", sans-serif; font-weight: 500; font-size: 15px; }
+    .desk-left span { font-size: 12px; color: #888; }
+    .desk-right { display: flex; align-items: center; gap: 30px; font-size: 12px; color: #666; }
+    @media (max-width: 700px) { .desk-row { flex-direction: column; align-items: flex-start; gap: 14px; } .desks-section { padding: 50px 20px; } }
+
+    /* ---------- 4. BOOKING VS GROUP SUPPORT (two-panel split) ---------- */
+    .support-split { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .support-panel {
+        border-radius: 20px;
+        padding: 50px 40px;
+        min-height: 320px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+    }
+    .support-panel::before { content: ""; position: absolute; inset: 0; background: rgba(31,31,31,0.78); border-radius: 20px; }
+    .support-panel * { position: relative; z-index: 1; color: #fff; }
+    .support-panel p { font-size: 13px; color: #ddd; margin: 12px 0 22px; line-height: 1.7; max-width: 320px; }
+    @media (max-width: 900px) { .support-split { grid-template-columns: 1fr; } }
+
+    /* ---------- 5. FAQ ACCORDION (single-column, distinct from split layout) ---------- */
+    .ct-faq-section { padding: 90px 40px; }
+    .ct-faq-section .ct-heading { margin: 0 auto 45px; text-align: center; }
+    .ct-faq-list { max-width: 780px; margin: 0 auto; }
+    .ct-faq-item { border: 1px solid #eee; border-radius: 14px; padding: 22px 26px; margin-bottom: 14px; }
+    .ct-faq-item h4 { display: flex; justify-content: space-between; align-items: center; font-family: "Outfit", sans-serif; font-weight: 500; font-size: 15px; cursor: pointer; }
+    .ct-faq-item h4 .material-symbols-outlined { color: var(--pcolor); font-size: 20px; }
+    .ct-faq-item p { font-size: 13px; color: #666; margin-top: 12px; line-height: 1.6; }
+    @media (max-width: 560px) { .ct-faq-section { padding: 50px 20px; } }
+
+    /* ---------- 6. CONTACT FORM CTA ---------- */
+    .ct-form-cta {
+        border-radius: 20px;
+        margin: 10px 10px 30px;
+        overflow: hidden;
+        position: relative;
+        background-image: linear-gradient(90deg, rgba(31,31,31,0.92) 45%, rgba(31,31,31,0.4) 100%), url("https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1400&q=80");
+        background-size: cover;
+        background-position: center;
+        padding: 70px 60px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: center;
+    }
+    .ct-form-cta .ct-heading { color: #fff; }
+    .ct-form-cta p { color: #ddd; font-size: 14px; margin: 16px 0 0; line-height: 1.7; max-width: 380px; }
+    .ct-form-cta form { display: flex; flex-direction: column; gap: 14px; }
+    .ct-form-cta input, .ct-form-cta textarea {
+        padding: 14px 18px;
+        border: 1px solid #555;
+        background: rgba(255,255,255,0.05);
+        color: #fff;
+        border-radius: 10px;
+        font-family: "Noto Sans", sans-serif;
+        font-size: 13px;
+    }
+    .ct-form-cta input:focus, .ct-form-cta textarea:focus { outline: none; border-color: var(--pcolor); }
+    .ct-form-cta textarea { resize: none; height: 90px; }
+    @media (max-width: 900px) { .ct-form-cta { grid-template-columns: 1fr; padding: 45px 25px; } }
+</style>
+
+    
+</head>
+   
+
+
+<body>
+
+
+
+
+<!-- ============ 1. CONTACT HERO ============ -->
+<section class="ct-wrap ct-hero">
+    <div class="ct-hero-img">
+        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1000&q=80" alt="Airport terminal">
+        <div class="ct-float-card">
+            <span class="material-symbols-outlined">support_agent</span>
+            <div>
+                <h4>24/7 Support</h4>
+                <p>Always on, wherever you're flying from</p>
+            </div>
+        </div>
+    </div>
+    <div class="ct-hero-text">
+        <span class="ct-eyebrow">Get In Touch</span>
+        <h2 class="ct-heading">Questions about your <b>trip</b>? We're here</h2>
+        <p>Whether it's a booking, a baggage query, or a rebooking request, our team is ready to help before you take off.</p>
+        <a href="#" class="ct-btn on-light">Start a Chat <span class="material-symbols-outlined">arrow_outward</span></a>
+    </div>
+</section>
+
+<!-- ============ 2. GET IN TOUCH (channels) ============ -->
+<section class="ct-wrap touch-section">
+    <div class="touch-row">
+        <div class="touch-left">
+            <span class="material-symbols-outlined">call</span>
+            <div><h4>Call Reservations</h4><span>Mon - Sun, 24 hours</span></div>
+        </div>
+        <div class="touch-value">+1 800 762 3927</div>
+    </div>
+    <div class="touch-row">
+        <div class="touch-left">
+            <span class="material-symbols-outlined">mail</span>
+            <div><h4>Email Support</h4><span>Response within 24 hours</span></div>
+        </div>
+        <div class="touch-value">fly@skyfare.com</div>
+    </div>
+    <div class="touch-row">
+        <div class="touch-left">
+            <span class="material-symbols-outlined">chat</span>
+            <div><h4>Live Chat</h4><span>Fastest way to reach us</span></div>
+        </div>
+        <div class="touch-value">Available Now</div>
+    </div>
+    <div class="touch-row">
+        <div class="touch-left">
+            <span class="material-symbols-outlined">location_on</span>
+            <div><h4>Head Office</h4><span>SkyFare Airlines HQ</span></div>
+        </div>
+        <div class="touch-value">New York, USA</div>
+    </div>
+</section>
+
+<!-- ============ 3. AIRPORT HELP DESKS ============ -->
+<section class="ct-wrap desks-section">
+    <h2 class="ct-heading">Find us at the <b>airport</b></h2>
+    <div class="desk-row">
+        <div class="desk-left">
+            <span class="material-symbols-outlined">flight_takeoff</span>
+            <div><h4>JFK International Airport</h4><span>Terminal 4, Departures Level</span></div>
+        </div>
+        <div class="desk-right"><span>Open 24 hours</span><span class="material-symbols-outlined">arrow_outward</span></div>
+    </div>
+    <div class="desk-row">
+        <div class="desk-left">
+            <span class="material-symbols-outlined">flight_takeoff</span>
+            <div><h4>Heathrow Airport</h4><span>Terminal 2, Check-in Row C</span></div>
+        </div>
+        <div class="desk-right"><span>5:00 AM - 11:00 PM</span><span class="material-symbols-outlined">arrow_outward</span></div>
+    </div>
+    <div class="desk-row">
+        <div class="desk-left">
+            <span class="material-symbols-outlined">flight_takeoff</span>
+            <div><h4>Dubai International Airport</h4><span>Terminal 1, Concourse B</span></div>
+        </div>
+        <div class="desk-right"><span>Open 24 hours</span><span class="material-symbols-outlined">arrow_outward</span></div>
+    </div>
+    <div class="desk-row">
+        <div class="desk-left">
+            <span class="material-symbols-outlined">flight_takeoff</span>
+            <div><h4>Narita International Airport</h4><span>Terminal 1, South Wing</span></div>
+        </div>
+        <div class="desk-right"><span>6:00 AM - 10:30 PM</span><span class="material-symbols-outlined">arrow_outward</span></div>
+    </div>
+</section>
+
+<!-- ============ 4. BOOKING VS GROUP SUPPORT ============ -->
+<section class="ct-wrap support-split">
+    <div class="support-panel" style="background-image:url('https://images.unsplash.com/photo-1583396618422-597b2755de9c?auto=format&fit=crop&w=900&q=80')">
+        <span class="ct-eyebrow">Individual Travelers</span>
+        <h3 style="font-family:'Outfit',sans-serif;font-weight:500;font-size:22px;">Booking & Ticket Support</h3>
+        <p>Help with new bookings, changes, cancellations and refunds for individual and family trips.</p>
+        <a href="#" class="ct-btn on-dark">Contact Booking Support <span class="material-symbols-outlined">arrow_outward</span></a>
+    </div>
+    <div class="support-panel" style="background-image:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80')">
+        <span class="ct-eyebrow">Businesses & Groups</span>
+        <h3 style="font-family:'Outfit',sans-serif;font-weight:500;font-size:22px;">Group & Corporate Support</h3>
+        <p>Dedicated assistance for group bookings of 10+ travelers and corporate travel accounts.</p>
+        <a href="#" class="ct-btn on-dark">Contact Group Support <span class="material-symbols-outlined">arrow_outward</span></a>
+    </div>
+</section>
+
+<!-- ============ 5. FAQ ============ -->
+<section class="ct-wrap ct-faq-section">
+    <h2 class="ct-heading">Common <b>questions</b></h2>
+    <div class="ct-faq-list">
+        <div class="ct-faq-item">
+            <h4>How do I change or cancel my flight? <span class="material-symbols-outlined">add</span></h4>
+            <p>Go to Manage Booking on our site, or contact our support team with your booking reference.</p>
+        </div>
+        <div class="ct-faq-item">
+            <h4>What is the baggage allowance for my fare? <span class="material-symbols-outlined">add</span></h4>
+            <p>Allowance depends on your cabin class and route — check your fare details at checkout or in your confirmation email.</p>
+        </div>
+        <div class="ct-faq-item">
+            <h4>How can I check in for my flight? <span class="material-symbols-outlined">add</span></h4>
+            <p>Online check-in opens 48 hours before departure through our website or mobile app.</p>
+        </div>
+        <div class="ct-faq-item">
+            <h4>Do you offer refunds on cancelled flights? <span class="material-symbols-outlined">add</span></h4>
+            <p>Refund eligibility depends on your fare type; flexible fares qualify for a full refund to your original payment method.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ============ 6. CONTACT FORM CTA ============ -->
+<section class="ct-form-cta">
+    <div>
+        <span class="ct-eyebrow">Send a Message</span>
+        <h2 class="ct-heading">Still need help? Write to us directly</h2>
+        <p>Share your booking reference and question, and our support team will follow up within one business day.</p>
+    </div>
+    <form>
+        <input type="text" placeholder="Full Name">
+        <input type="email" placeholder="Email Address">
+        <input type="text" placeholder="Booking Reference (optional)">
+        <textarea placeholder="Your Message"></textarea>
+        <button type="submit" class="ct-btn on-dark" style="border:1px solid var(--pcolor);width:200px;">Send Message <span class="material-symbols-outlined">arrow_outward</span></button>
+    </form>
+</section>
+</body>
+
+</html>
