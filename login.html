@@ -36,39 +36,217 @@
             align-items: center;
             justify-content: center;
             width: 100%;
-            height: 100vh;
+            min-height: 100vh;
             background: gray;
+            padding: 10px;
         }
 
         .loginpage {
             display: grid;
             grid-template-columns: 1fr 1fr;
+            max-width: 1200px;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            position: relative;
         }
+
+        .loginpage::before {
+            content: "";
+            background: rgba(255, 255, 255, 0.432);
+            position: absolute;
+            inset: 0;
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% -50%);
+        }
+
+
+
 
         .section1 {
             background: red;
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: flex-start;
+            padding: 20px;
+            width: 100%;
         }
 
         .section1 h1 {
             font-size: 40px;
+            margin-bottom: 10px;
+
+
+        }
+
+        .login-header {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+
+        .login-header p,
+        .login-header a {
+            font-size: 15px;
+            text-decoration: none;
+        }
+
+        .loginform {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+        }
+
+        .inputbox {
+            position: relative;
+        }
+
+        .inputbox input,
+        .inputbox select {
+            padding: 13px 30px;
+            width: 100%;
+            border-radius: 4px;
+            border: none;
+
+        }
+
+        .inputbox span {
+            font-size: 20px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 5px;
+
+        }
+
+        .box {
+            display: flex;
+            justify-content: space-between;
+            padding-block: 20px;
+        }
+
+        .check{
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .loginbtn {
+            padding: 13px 30px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 4px;
+            border: none;
+        }
+
+        .loginfooter {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            margin-block: 20px;
+            gap: 10px;
+        }
+
+        .footericons {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .footericons a {
+            font-size: 30px;
+            background: white;
+            padding: 1px 40px;
+            border-radius: 5px;
         }
 
         .section2 {
             background: blue;
-        }
-
-        .login-header{
             display: flex;
-            gap: 10px;
+            flex-direction: column;
+            align-items: flex-end;
+            padding: 20px;
         }
 
-         .login-header p ,.login-header a{
-            font-size: 15px;
-            text-decoration: none;
-         }
+        .logo {
+            width: 160px;
+            margin-bottom: 10px;
+            z-index: 9999;
+        }
+
+        .section2 h1 {
+            font-size: 50px;
+            max-width: 250px;
+            text-align: end;
+            margin-bottom: 10px;
+            z-index: 9999;
+        }
+
+        .section2 p {
+            max-width: 300px;
+            text-align: end;
+            line-height: 1.5;
+            z-index: 9999;
+        }
+
+        @media (max-width:800px) {
+            .loginpage {
+                grid-template-columns: 1fr;
+            }
+
+            .loginpage::before {
+                display: none;
+            }
+
+            .section1 {
+                align-items: center;
+                order: 2;
+            }
+
+            .section1 h1 {
+                font-size: 30px;
+            }
+
+            .login-header {
+                flex-direction: column;
+                gap: 5px;
+                text-align: center;
+            }
+
+            .box {
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+                gap: 10px;
+            }
+
+            .loginfooter {
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .section2 {
+                order: 1;
+                align-items: center;
+            }
+
+            .section2 img {
+                width: 150px;
+            }
+
+
+            .section2 h1 {
+                text-align: center;
+                font-size: 40px;
+
+            }
+
+            .section2 p {
+                text-align: center;
+                font-size: 15px;
+            }
+        }
     </style>
 </head>
 
@@ -89,6 +267,7 @@
             <div class="loginform">
 
                 <div class="inputbox">
+                    <span class="material-symbols-outlined callicon">person</span>
                     <select id="role">
                         <option value="">Select Your Role</option>
                         <option value="Admin">Admin</option>
@@ -110,7 +289,7 @@
 
                 <div class="box">
                     <div>
-                        <div>
+                        <div class="check">
                             <input type="checkbox" id="checkbox"><label for="">Remember Me</label>
                         </div>
                         <p></p>
@@ -118,14 +297,14 @@
                     <a href="404.html">Forget Password?</a>
                 </div>
 
-                <button class="Loginbtn">Login</button>
+                <button class="loginbtn">Login</button>
             </div>
 
-            <div>
-                <p>Or Login With</p>
+            <div class="loginfooter">
+                <p class="or">Or login with</p>
 
-                <div>
-                    <a href=""><i class="fa-brands fa-facebook"></i></a>
+                <div class="footericons">
+                    <a href=""><i class="fa-brands fa-square-facebook"></i></i></a>
                     <a href=""><i class="fa-brands fa-instagram"></i></a>
                 </div>
             </div>
@@ -134,7 +313,7 @@
         </div>
 
         <div class="section2">
-            <img src="./src/logo.webp" alt="Company Logo">
+            <img src="./src/logo.webp" alt="Company Logo" class="logo">
 
             <h1>Welcome Back</h1>
 
