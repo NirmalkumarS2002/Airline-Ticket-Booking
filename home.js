@@ -88,3 +88,29 @@ ctaBtn.addEventListener("click", (e) => {
 
     ctaEmail.value = "";
 });
+
+//
+
+const heroSection = document.querySelector(".hero-section");
+
+const images = [
+    "./src/pg19.webp",
+    "./src/pm6.webp",
+    "./src/hero-bg5.webp"
+];
+
+let index = 0;
+
+setInterval(() => {
+
+    index = (index + 1) % images.length;
+
+    heroSection.style.background = `
+    linear-gradient(
+        125deg,
+        rgba(0,0,0,.78),
+        rgba(0,0,0,.82)
+    ),
+    url('${images[index]}') center/cover no-repeat`;
+
+}, 3000);
