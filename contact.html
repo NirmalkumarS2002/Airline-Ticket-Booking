@@ -535,6 +535,36 @@
         margin-top: 12px;
     }
 
+    /**/
+
+    .faq-item p {
+    max-height: 0;
+    overflow: hidden;
+    transition: all .4s ease;
+    opacity: 0;
+}
+
+.faq-item.active p {
+    max-height: 200px;
+    opacity: 1;
+    margin-top: 15px;
+}
+
+.faq-q {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.faq-q span {
+    transition: .3s ease;
+}
+
+.faq-item.active .faq-q span {
+    transform: rotate(180deg);
+}
+
     /* ===================== 6. CTA BAND ===================== */
 
     .cta-section {
@@ -744,24 +774,24 @@
                 <div class="form-row">
                     <div class="form-field">
                         <label>Full Name</label>
-                        <input type="text" placeholder="Enter your name">
+                        <input type="text" placeholder="Enter your name" id="name">
                     </div>
 
                     <div class="form-field">
                         <label>Email Address</label>
-                        <input type="email" placeholder="Enter your email">
+                        <input type="email" placeholder="Enter your email" id="email">
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-field">
                         <label>Phone Number</label>
-                        <input type="text" placeholder="Enter your phone">
+                        <input type="text" placeholder="Enter your phone" id="phone">
                     </div>
 
                     <div class="form-field">
                         <label>Subject</label>
-                        <select>
+                        <select id="subject">
                             <option>Booking Enquiry</option>
                             <option>Flight Change</option>
                             <option>Refund Request</option>
@@ -772,7 +802,7 @@
 
                     <div class="form-field full">
                         <label>Message</label>
-                        <textarea rows="4" placeholder="Write your message here"></textarea>
+                        <textarea rows="4" id="message" placeholder="Write your message here"></textarea>
                     </div>
                 </div>
 
@@ -1023,6 +1053,7 @@
     </footer>
 
         <script src="script.js"></script>
+        <script src="contact.js"></script>
 
 </body>
 

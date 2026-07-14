@@ -186,7 +186,7 @@
         align-items: flex-start;
         height: 100vh;
         width: 320px;
-        background: white;
+        background: #1B142D;
         padding: 90px 22px;
         transition: all .6s ease;
         transform: translateX(-100%);
@@ -209,12 +209,14 @@
         display: block;
         font-weight: bold;
         color: var(--hcolor);
+        cursor: pointer;
     }
 
     .menus li {
         width: 100%;
         padding: 10px;
-        border-bottom: 1px solid rgba(128, 128, 128, 0.384);
+        border-bottom: 1px solid rgba(128, 128, 128, 0.178);
+        border-radius: 5px;
       
     }
 
@@ -237,7 +239,7 @@
 
     .menus li a {
         width: 100%;
-        color: var(--pcolor);
+        color: white;
         font-weight: 600;
     }
 

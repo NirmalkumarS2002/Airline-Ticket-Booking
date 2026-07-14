@@ -56,7 +56,7 @@
         justify-content: space-between;
         gap: 50px;
         padding: 120px 50px;
-        background: linear-gradient(125deg, rgba(0, 0, 0, 0.664), rgba(0, 0, 0, 0.747)), url("./src/hero-bg5.webp");
+        background: linear-gradient(125deg, rgba(0, 0, 0, 0.781), rgba(0, 0, 0, 0.822)), url("./src/hero-bg5.webp");
         background-size: cover;
         background-repeat: no-repeat;
         background-position: top center;
@@ -89,9 +89,42 @@
         margin-bottom: 20px;
     }
 
+    .hero-text h1 .h1text {
+        display: inline-block;
+        overflow: hidden;
+        white-space: nowrap;
+        vertical-align: bottom;
+
+        width: 0;
+        border-right: 4px solid var(--hcolor);
+
+        animation:
+            typing 4s steps(15, end) infinite alternate,
+            blink .8s step-end infinite;
+    }
+
+    @keyframes typing {
+        from {
+            width: 0;
+        }
+
+        to {
+            width: 14ch;
+        }
+    }
+
+    @keyframes blink {
+        50% {
+            border-color: transparent;
+        }
+    }
+
+
+
     .hero-text h1 span {
         color: var(--hcolor);
     }
+
 
     .hero-text>p {
         font-size: clamp(15px, 1.7vw, 18px);
@@ -952,7 +985,7 @@
         font-size: 14.5px;
         line-height: 1.7;
         margin-bottom: 24px;
-              flex: 1;
+        flex: 1;
     }
 
     .test-user {
@@ -971,7 +1004,7 @@
 
     .test-user h4 {
         color: var(--text);
-        font-size: 15px;  
+        font-size: 15px;
     }
 
     .test-user span {
@@ -1064,10 +1097,11 @@
         cursor: pointer;
         transition: .4s ease;
     }
-     .cta-form button:hover{
+
+    .cta-form button:hover {
         background: var(--hcolor);
         box-shadow: 1px 1px 15px var(--pcolor);
-     }
+    }
 
     .cta-img {
         height: 100%;
@@ -1146,8 +1180,7 @@
             </div>
 
             <h1>
-                Explore the World with <span>Stackly Airline</span>
-
+                Explore the World with <span class="h1text">Stackly Airline</span>
             </h1>
 
             <p>
@@ -1222,22 +1255,24 @@
             <div class="search-grid">
                 <div class="search-field">
                     <label><span class="material-symbols-outlined">flight_takeoff</span>From</label>
-                    <input type="text" placeholder="Chennai (MAA)">
+                    <input type="text" id="from" placeholder="Chennai (MAA)">
                 </div>
 
                 <div class="search-field">
                     <label><span class="material-symbols-outlined">flight_land</span>To</label>
-                    <input type="text" placeholder="Dubai (DXB)">
+                    <input type="text" id="to" placeholder="Dubai (DXB)">
                 </div>
 
                 <div class="search-field">
                     <label><span class="material-symbols-outlined">calendar_month</span>Departure</label>
-                    <input type="date">
+                    <input type="date" id="departure">
                 </div>
 
                 <div class="search-field">
                     <label><span class="material-symbols-outlined">group</span>Passengers</label>
-                    <select>
+
+                    <select id="passengers">
+                        <option value="">Select Passengers</option>
                         <option>1 Adult</option>
                         <option>2 Adults</option>
                         <option>2 Adults, 1 Child</option>
@@ -1245,7 +1280,10 @@
                     </select>
                 </div>
 
-                <button class="search-btn">Search <span class="material-symbols-outlined">search</span></button>
+               <button class="search-btn">
+    Search
+    <span class="material-symbols-outlined">search</span>
+</button>
             </div>
         </div>
     </section>
@@ -1267,8 +1305,7 @@
 
         <div class="dest-grid">
             <div class="dest-card">
-                <img src="./src/h1.webp"
-                    alt="Paris">
+                <img src="./src/h1.webp" alt="Paris">
                 <div class="dest-overlay">
                     <h3>Paris, France</h3>
                     <p class="tag">Direct flights daily</p>
@@ -1277,8 +1314,7 @@
             </div>
 
             <div class="dest-card">
-                <img src="./src/h2.webp"
-                    alt="Tokyo">
+                <img src="./src/h2.webp" alt="Tokyo">
                 <div class="dest-overlay">
                     <h3>Tokyo, Japan</h3>
                     <p class="tag">Direct flights daily</p>
@@ -1287,8 +1323,7 @@
             </div>
 
             <div class="dest-card">
-                <img src="./src/h3.webp"
-                    alt="Dubai">
+                <img src="./src/h3.webp" alt="Dubai">
                 <div class="dest-overlay">
                     <h3>Dubai, UAE</h3>
                     <p class="tag">Direct flights daily</p>
@@ -1297,8 +1332,7 @@
             </div>
 
             <div class="dest-card">
-                <img src="./src/h4.webp"
-                    alt="New York">
+                <img src="./src/h4.webp" alt="New York">
                 <div class="dest-overlay">
                     <h3>New York, USA</h3>
                     <p class="tag">Direct flights daily</p>
@@ -1368,8 +1402,7 @@
         <div class="deals-grid">
             <div class="deal-card">
                 <div class="deal-img">
-                    <img src="./src/h6.webp"
-                        alt="Chennai to Singapore">
+                    <img src="./src/h6.webp" alt="Chennai to Singapore">
                     <span class="deal-badge">Save 22%</span>
                 </div>
                 <div class="deal-body">
@@ -1385,8 +1418,7 @@
 
             <div class="deal-card">
                 <div class="deal-img">
-                    <img src="./src/h5.webp"
-                        alt="Chennai to Bangkok">
+                    <img src="./src/h5.webp" alt="Chennai to Bangkok">
                     <span class="deal-badge">Save 18%</span>
                 </div>
                 <div class="deal-body">
@@ -1402,8 +1434,7 @@
 
             <div class="deal-card">
                 <div class="deal-img">
-                    <img src="./src/pg11.webp"
-                        alt="Chennai to London">
+                    <img src="./src/pg11.webp" alt="Chennai to London">
                     <span class="deal-badge">Save 15%</span>
                 </div>
                 <div class="deal-body">
@@ -1478,8 +1509,7 @@
 
         <div class="fleet-grid">
             <div class="fleet-card">
-                <img src="./src/abt-bg2.webp"
-                    alt="Aircraft on runway">
+                <img src="./src/abt-bg2.webp" alt="Aircraft on runway">
                 <div class="fleet-info">
                     <h3>Stackly A320neo</h3>
                     <div class="fleet-specs">
@@ -1490,8 +1520,7 @@
             </div>
 
             <div class="fleet-card">
-                <img src="./src/pm2.webp"
-                    alt="Aircraft wing view">
+                <img src="./src/pm2.webp" alt="Aircraft wing view">
                 <div class="fleet-info">
                     <h3>Stackly B787 Dreamliner</h3>
                     <div class="fleet-specs">
@@ -1502,8 +1531,7 @@
             </div>
 
             <div class="fleet-card">
-                <img src="./src/pg18.webp"
-                    alt="Airplane in flight">
+                <img src="./src/pg18.webp" alt="Airplane in flight">
                 <div class="fleet-info">
                     <h3>Stackly A350 XWB</h3>
                     <div class="fleet-specs">
@@ -1582,14 +1610,13 @@
                     routes.</p>
 
                 <div class="cta-form">
-                    <input type="email" placeholder="Email">
-                    <button>Subscribe</button>
+                    <input type="email" placeholder="Email" id="ctaform">
+                    <button class="ctabtn">Subscribe</button>
                 </div>
             </div>
 
             <div class="cta-img">
-                <img src="./src/hero-bg.webp"
-                    alt="Airplane above clouds">
+                <img src="./src/hero-bg.webp" alt="Airplane above clouds">
             </div>
         </div>
     </section>
@@ -1676,6 +1703,7 @@
         </div>
     </footer>
     <script src="script.js"></script>
+    <script src="home.js"></script>
 </body>
 
 </html>

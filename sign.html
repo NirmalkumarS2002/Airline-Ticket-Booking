@@ -120,7 +120,6 @@
             border-radius: 7px;
             background: white;
             border: 1px solid rgba(128, 128, 128, 0.308);
-            margin-bottom: 5px;
         }
 
         .inputbox input:focus {
@@ -138,8 +137,7 @@
 
         }
 
-
-        .inputwrap p {
+        .perror {
             font-size: 13px;
             margin-top: 5px;
         }
@@ -221,7 +219,7 @@
             color: white;
         }
 
-         .homebtn {
+        .homebtn {
             text-decoration: none;
             font-size: 15px;
             text-transform: capitalize;
@@ -336,6 +334,87 @@
                 justify-content: center;
             }
         }
+
+        input[type="password"]::-ms-reveal,
+        input[type="password"]::-ms-clear {
+            display: none;
+        }
+
+        .custom-dropdown {
+            position: relative;
+            width: 100%;
+        }
+
+        .selected-option {
+            padding: 12px 3px;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            background: white;
+            transition: .3s;
+        }
+
+        .selected-option .ic {
+            font-size: 22px;
+            color: var(--ncolor);
+        }
+
+        .selected-option:hover {
+            border-color: #9147FF;
+        }
+
+        .selected-text {
+            flex: 1;
+            font-size: 13px;
+        }
+
+        .arrow {
+            color: #9147FF;
+            transition: .3s;
+        }
+
+        .dropdown-list {
+            position: absolute;
+            top: 110%;
+            left: 0;
+            width: 100%;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .1);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: .3s ease;
+            z-index: 100;
+        }
+
+        .custom-dropdown.active .dropdown-list {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .custom-dropdown.active .arrow {
+            transform: rotate(180deg);
+        }
+
+        .option {
+            padding: 15px 18px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .option:hover {
+            background: linear-gradient(90deg, #9147FF, #d946ef);
+            color: white;
+        }
     </style>
 </head>
 
@@ -355,57 +434,69 @@
 
             <div class="loginform">
 
-                <div class="inputwrap">
-                    <div class="inputbox">
-                        <span class="material-symbols-outlined callicon">person</span>
-                        <select id="role">
-                            <option value="">Select Your Role</option>
-                            <option value="Admin">Admin</option>
-                            <option value="Client">Client</option>
-                        </select>
+                <div class="custom-dropdown">
+                    <div class="selected-option">
+                        <span class="material-symbols-outlined ic">person</span>
+                        <span class="selected-text">Select Your Role</span>
+                        <span class="material-symbols-outlined arrow ic">keyboard_arrow_down</span>
                     </div>
-                    <p></p>
+
+                    <div class="dropdown-list">
+                        <div class="option" data-value="Admin">
+
+                            Admin
+                        </div>
+
+                        <div class="option" data-value="Client">
+
+                            Traveler
+                        </div>
+                    </div>
+
+                    <p class="perror"></p>
+
+                    <input type="hidden" id="role">
                 </div>
 
-                <div  class="inputwrap">
+                <div class="inputwrap">
                     <div class="inputbox">
                         <span class="material-symbols-outlined callicon">call</span>
                         <input type="text" id="name" placeholder="Enter Your Name">
                     </div>
-                    <p></p>
+                    <p class="perror"></p>
                 </div>
 
 
-                <div  class="inputwrap">
+                <div class="inputwrap">
                     <div class="inputbox">
                         <span class="material-symbols-outlined callicon">call</span>
-                        <input type="tell" id="number" placeholder="Enter Your Numbaer">
+                        <input type="text" id="number" placeholder="Enter Your Number">
                     </div>
-                    <p></p>
+                    <p class="perror"></p>
                 </div>
 
-                <div  class="inputwrap">
+                <div class="inputwrap">
                     <div class="inputbox">
                         <span class="material-symbols-outlined callicon">email</span>
                         <input type="email" id="email" placeholder="Enter Your Email">
                     </div>
-                    <p></p>
+                    <p class="perror"></p>
                 </div>
 
-                <div  class="inputwrap">
+                <div class="inputwrap">
                     <div class="inputbox">
-                        <span class="material-symbols-outlined callicon">visibility_off</span>
-                        <input type="password" id="password" placeholder="Enter Your Email">
+                        <span class="material-symbols-outlined callicon passeye">visibility_off</span>
+                        <input type="password" id="password" placeholder="Enter Your Password">
                     </div>
-                    <p></p>
+                    <p class="perror"></p>
                 </div>
 
-                <div  class="inputwrap">
+                <div class="inputwrap">
                     <div class="inputbox">
-                    <span class="material-symbols-outlined callicon">visibility_off</span>
-                    <input type="password" id="conpassword" placeholder="Enter Your Email">
-                </div>
-                <p></p>
+                        <span class="material-symbols-outlined callicon passeye">visibility_off</span>
+                        <input type="password" id="conpassword" placeholder="Enter Your Confirm password">
+                    </div>
+                    <p class="perror"></p>
                 </div>
 
 
@@ -413,7 +504,7 @@
                 <button class="loginbtn">Login</button>
             </div>
 
-              <a href="index.html" class="homebtn"><i class="fa-regular fa-house"></i> back to home</a>
+            <a href="index.html" class="homebtn"><i class="fa-regular fa-house"></i> back to home</a>
 
 
 
@@ -424,9 +515,155 @@
 
             <h1>Start Your Journey</h1>
 
-<p>Create your account to book flights, manage trips, and explore destinations around the world.</p>
+            <p>Create your account to book flights, manage trips, and explore destinations around the world.</p>
         </div>
     </div>
+
+    <script>
+
+        const loginbtn = document.querySelector(".loginbtn")
+        const role = document.querySelector("#role")
+        const name2 = document.querySelector("#name")
+        const number = document.querySelector("#number")
+        const email = document.querySelector("#email")
+        const password = document.querySelector("#password")
+        const conpassword = document.querySelector("#conpassword")
+        const errors = document.querySelectorAll(".perror")
+
+        name2.addEventListener("input", () => {
+            name2.value = name2.value.replace(/[^A-Za-z\s]/g, "")
+        })
+
+        number.addEventListener("input", () => {
+            number.value = number.value.replace(/[^0-9]/g, "").slice(0, 10)
+        })
+
+
+        loginbtn.addEventListener("click", () => {
+
+            const frole = role.value.trim()
+            const fname = name2.value.trim()
+            const fnumber = number.value.trim()
+            const femail = email.value.trim()
+            const fpass = password.value.trim()
+            const cpass = conpassword.value.trim()
+
+            let isvalid = true;
+
+            const emailregex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+            errors.forEach((error) => {
+                error.textContent = "";
+                error.style.color = "#bd00f7"
+            })
+
+
+            if (frole == "") {
+                errors[0].textContent = "Please Select Your Role"
+                isvalid = false;
+            }
+
+            if (fname == "") {
+                errors[1].textContent = "Please Enter Your Name"
+                isvalid = false;
+            }
+
+            if (fnumber == "") {
+                errors[2].textContent = "Please Enter Your Number"
+                isvalid = false;
+            }
+
+            if (femail == "") {
+                errors[3].textContent = "Please Enter Your Email"
+                isvalid = false;
+            }
+
+            else if (!emailregex.test(femail)) {
+                errors[3].textContent = "Please Enter Valid Email"
+                isvalid = false;
+            }
+
+
+            if (fpass == "") {
+                errors[4].textContent = "Please Enter Your Password"
+                isvalid = false;
+            }
+
+            else if (password.value.length < 6) {
+                errors[4].textContent = "Password must be in 6 chars"
+                isvalid = false;
+            }
+
+            if (cpass == "") {
+                errors[5].textContent = "Please Enter Your Password"
+                isvalid = false;
+            }
+
+            else if (cpass !== fpass) {
+                errors[5].textContent = "password and confirm password must be same"
+                isvalid = false;
+            }
+
+            if (isvalid) {
+                alert("Sign Up Successfully!")
+                window.location.href = "login.html"
+            }
+
+        })
+
+
+        //pass eye
+
+        const passEyes = document.querySelectorAll(".passeye");
+
+        passEyes.forEach((eye) => {
+            eye.addEventListener("click", () => {
+
+                const input = eye.nextElementSibling;
+
+                if (input.type === "password") {
+                    input.type = "text";
+                    eye.textContent = "visibility";
+                }
+                else {
+                    input.type = "password";
+                    eye.textContent = "visibility_off";
+                }
+
+            });
+        });
+
+
+        //dropdown
+
+        const dropdown = document.querySelector(".custom-dropdown");
+        const selected = document.querySelector(".selected-option");
+        const selectedText = document.querySelector(".selected-text");
+        const options = document.querySelectorAll(".option");
+        const roleInput = document.querySelector("#role");
+
+        selected.addEventListener("click", () => {
+            dropdown.classList.toggle("active");
+        });
+
+        options.forEach(option => {
+            option.addEventListener("click", () => {
+                selectedText.textContent = option.textContent.trim();
+                roleInput.value = option.dataset.value;
+
+                dropdown.classList.remove("active");
+            });
+        });
+
+        document.addEventListener("click", (e) => {
+            if (!dropdown.contains(e.target)) {
+                dropdown.classList.remove("active");
+            }
+        });
+
+
+
+    </script>
 </body>
 
 </html>
