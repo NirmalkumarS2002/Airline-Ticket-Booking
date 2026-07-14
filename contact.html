@@ -660,6 +660,87 @@
             padding: 70px 20px;
         }
     }
+
+    .custom-dropdown {
+    position: relative;
+    width: 100%;
+}
+
+.dropdown-selected {
+    height: 47px;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    padding: 0 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    cursor: pointer;
+    background: white;
+
+    transition: .3s ease;
+}
+
+.dropdown-selected span:first-child{
+    font-size: 15px;
+}
+
+.dropdown-selected:hover {
+    border-color: #9147FF;
+}
+
+.custom-dropdown.active .dropdown-selected {
+    border-color: #9147FF;
+    box-shadow: 0 0 15px rgba(145, 71, 255, .15);
+}
+
+.arrow {
+    color: #9147FF;
+    transition: .3s ease;
+}
+
+.custom-dropdown.active .arrow {
+    transform: rotate(180deg);
+}
+
+.dropdown-options {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+
+    width: 100%;
+    background: white;
+
+    border-radius: 12px;
+    overflow: hidden;
+
+    box-shadow: 0 15px 35px rgba(0,0,0,.08);
+    font-size: 15px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+
+    transition: .3s ease;
+    z-index: 100;
+}
+
+.custom-dropdown.active .dropdown-options {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-option {
+    padding: 15px 20px;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.dropdown-option:hover {
+    background: linear-gradient(90deg, #9147FF, #c84dff);
+    color: white;
+}
 </style>
 
 <body>
@@ -791,13 +872,40 @@
 
                     <div class="form-field">
                         <label>Subject</label>
-                        <select id="subject">
-                            <option>Booking Enquiry</option>
-                            <option>Flight Change</option>
-                            <option>Refund Request</option>
-                            <option>Baggage Support</option>
-                            <option>Other</option>
-                        </select>
+                      <div class="custom-dropdown" id="subjectDropdown">
+
+    <div class="dropdown-selected">
+        <span>Select Subject</span>
+
+        <span class="material-symbols-outlined arrow">
+            keyboard_arrow_down
+        </span>
+    </div>
+
+    <div class="dropdown-options">
+        <div class="dropdown-option" data-value="Booking Enquiry">
+         Booking Enquiry
+        </div>
+
+        <div class="dropdown-option" data-value="Flight Change">
+             Flight Change
+        </div>
+
+        <div class="dropdown-option" data-value="Refund Request">
+             Refund Request
+        </div>
+
+        <div class="dropdown-option" data-value="Baggage Support">
+             Baggage Support
+        </div>
+
+        <div class="dropdown-option" data-value="Other">
+             Other
+        </div>
+    </div>
+
+    <input type="hidden" id="subject">
+</div>
                     </div>
 
                     <div class="form-field full">
@@ -877,25 +985,25 @@
         </div>
 
         <div class="support-grid">
-            <div class="support-card">
+            <div class="support-card errorpage">
                 <span class="material-symbols-outlined">forum</span>
                 <h3>Live Chat</h3>
                 <p>Chat with a support agent in real time, right from your account.</p>
             </div>
 
-            <div class="support-card">
+            <div class="support-card errorpage">
                 <span class="material-symbols-outlined">help_center</span>
                 <h3>Help Center</h3>
                 <p>Browse guides on booking, baggage, refunds and check-in.</p>
             </div>
 
-            <div class="support-card">
+            <div class="support-card errorpage">
                 <span class="material-symbols-outlined">confirmation_number</span>
                 <h3>Manage Booking</h3>
                 <p>Change dates, add baggage or cancel your ticket online.</p>
             </div>
 
-            <div class="support-card">
+            <div class="support-card errorpage">
                 <span class="material-symbols-outlined">share</span>
                 <h3>Social Media</h3>
                 <p>Message us on our official pages for quick responses.</p>
@@ -1037,7 +1145,7 @@
                     <button class="subscribe-btn">Subscirbe</button>
                 </div>
 
-                <a href=""><span class="material-symbols-outlined">mail</span>admin@gmail.com</a>
+                <a href="404.html"><span class="material-symbols-outlined">mail</span>admin@gmail.com</a>
 
             </div>
         </div>

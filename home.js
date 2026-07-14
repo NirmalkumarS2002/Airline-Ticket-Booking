@@ -114,3 +114,35 @@ setInterval(() => {
     url('${images[index]}') center/cover no-repeat`;
 
 }, 3000);
+
+//
+
+const dropdown = document.querySelector("#passengerDropdown");
+const selected = dropdown.querySelector(".dropdown-selected");
+const selectedText = selected.querySelector("span");
+const options = dropdown.querySelectorAll(".dropdown-option");
+const hiddenInput = document.querySelector("#passengers");
+
+selected.addEventListener("click", () => {
+    dropdown.classList.toggle("active");
+});
+
+options.forEach(option => {
+
+    option.addEventListener("click", () => {
+
+        selectedText.textContent = option.dataset.value;
+        hiddenInput.value = option.dataset.value;
+
+        dropdown.classList.remove("active");
+    });
+
+});
+
+document.addEventListener("click", (e) => {
+
+    if (!dropdown.contains(e.target)) {
+        dropdown.classList.remove("active");
+    }
+
+});

@@ -102,3 +102,31 @@ faqItems.forEach((item) => {
         }
     });
 });
+
+
+//
+const subjectDropdown = document.querySelector("#subjectDropdown");
+const selected = subjectDropdown.querySelector(".dropdown-selected");
+const selectedText = selected.querySelector("span");
+const options = subjectDropdown.querySelectorAll(".dropdown-option");
+const hiddenInput = document.querySelector("#subject");
+
+selected.addEventListener("click", () => {
+    subjectDropdown.classList.toggle("active");
+});
+
+options.forEach(option => {
+    option.addEventListener("click", () => {
+
+        selectedText.textContent = option.dataset.value;
+        hiddenInput.value = option.dataset.value;
+
+        subjectDropdown.classList.remove("active");
+    });
+});
+
+document.addEventListener("click", (e) => {
+    if (!subjectDropdown.contains(e.target)) {
+        subjectDropdown.classList.remove("active");
+    }
+});

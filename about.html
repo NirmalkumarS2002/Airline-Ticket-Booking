@@ -176,6 +176,17 @@
         gap: 40px;
     }
 
+    .hero-stats div{
+        transition: .6s ease;
+    }
+    .hero-stats div:hover{
+        transform: scale(1.1);
+    }
+
+     .hero-stats div:hover h3{
+        color: var(--hcolor);
+     }
+
     .hero-stats div h3 {
         color: var(--text);
         font-size: 28px;
@@ -407,8 +418,16 @@
     .stat-item {
         text-align: center;
         border-right: 1px solid rgba(255, 255, 255, 0.25);
+        transition: .6s ease-in-out;
     }
 
+     .stat-item:hover{
+        transform: scale(1.1);
+     }
+
+          .stat-item:hover h3{
+            color: black;
+          }
     .stat-item:last-child {
         border-right: none;
     }
@@ -934,7 +953,7 @@
                     <button class="subscribe-btn">Subscirbe</button>
                 </div>
 
-                <a href=""><span class="material-symbols-outlined">mail</span>admin@gmail.com</a>
+                <a href="404.html"><span class="material-symbols-outlined">mail</span>admin@gmail.com</a>
 
             </div>
         </div>
