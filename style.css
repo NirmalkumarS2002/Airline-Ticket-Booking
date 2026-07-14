@@ -17,9 +17,17 @@
     justify-content: space-between;
     padding-inline: 40px;
     padding-block: 6px;
-    position: absolute;
+    position: fixed;
     width: 100%;
+    z-index: 9999;
 }
+
+.header.headvis {
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 5px 20px rgba(0,0,0,.3);
+}
+
 
 .logoimage {
     display: flex;

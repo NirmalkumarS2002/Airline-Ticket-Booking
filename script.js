@@ -18,9 +18,9 @@ menubtn.addEventListener("click", () => {
 
 //errorpage
 
-document.querySelectorAll(".errorpage").forEach((error)=>{
-    error.addEventListener("click",()=>{
-        window.location.href="404.html"
+document.querySelectorAll(".errorpage").forEach((error) => {
+    error.addEventListener("click", () => {
+        window.location.href = "404.html"
     })
 })
 
@@ -50,4 +50,18 @@ subscribeBtn.addEventListener("click", (e) => {
     alert("Subscribed Successfully!");
 
     footerEmail.value = "";
+});
+
+//
+const header = document.querySelector(".header");
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 50) {
+        header.classList.add("headvis");
+    }
+    else {
+        header.classList.remove("headvis");
+    }
+
 });
