@@ -25,7 +25,7 @@
 .header.headvis {
     background: rgba(0, 0, 0, 0.9);
     backdrop-filter: blur(10px);
-    box-shadow: 0 5px 20px rgba(0,0,0,.3);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .3);
 }
 
 
@@ -225,7 +225,7 @@
         padding: 10px;
         border-bottom: 1px solid rgba(128, 128, 128, 0.178);
         border-radius: 5px;
-      
+
     }
 
     .menus li:hover {
@@ -421,7 +421,7 @@
     background: white;
 }
 
-#footer-email::placeholder{
+#footer-email::placeholder {
     color: rgb(173, 173, 173);
 }
 
@@ -532,26 +532,26 @@
 
 /* common hero */
 
-.common-hero{
+.common-hero {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     min-height: 60vh;
-    background: linear-gradient(125deg,rgba(0, 0, 0, 0.87),rgba(0, 0, 0, 0.404)),url("./src/bbb.webp");
-    background-position:center;
+    background: linear-gradient(125deg, rgba(0, 0, 0, 0.87), rgba(0, 0, 0, 0.404)), url("./src/bbb.webp");
+    background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
 }
 
-.common-hero h1{
-    font-size: clamp(25px,3.5vw,40px);
+.common-hero h1 {
+    font-size: clamp(25px, 3.5vw, 40px);
     margin-bottom: 15px;
     color: white;
 }
 
-.common-hero p{
-    font-size: clamp(14px,1.5vw,16px);
+.common-hero p {
+    font-size: clamp(14px, 1.5vw, 16px);
     max-width: 600px;
     text-align: center;
     line-height: 1.5;
@@ -559,21 +559,72 @@
     color: rgb(204, 204, 204);
 }
 
-.common-hero div a{
+.common-hero div a {
     text-decoration: none;
 }
 
-.common-hero div{
+.common-hero div {
     color: white;
 }
 
-.common-hero div a:first-child{
+.common-hero div a:first-child {
     color: gray;
     font-size: 13px;
 }
 
-.common-hero div a:last-child{
+.common-hero div a:last-child {
     color: var(--hcolor);
     font-size: 16px;
 }
 
+
+
+/*reveal animations*/
+
+.reveal,
+.reveal-right,
+.reveal-left {
+    opacity: 0;
+    transition: all .8s ease;
+}
+
+.reveal {
+    transform: translatey(-160px);
+}
+
+.reveal-left {
+    transform: translateX(-160px);
+}
+
+.reveal-right {
+    transform: translateX(160px);
+}
+
+
+.reveal.ractive,
+.reveal-left.ractive,
+.reveal-right.ractive {
+    opacity: 1;
+    transform: translate(0);
+}
+
+
+.delay-1 {
+    transition-delay: .2s !important;
+}
+
+.delay-2 {
+    transition-delay: .4s !important;
+}
+
+.delay-3 {
+    transition-delay: .6s !important;
+}
+
+.delay-4 {
+    transition-delay: .8s !important;
+}
+
+.delay-5 {
+    transition-delay: 1s !important;
+}

@@ -65,3 +65,21 @@ window.addEventListener("scroll", () => {
     }
 
 });
+
+//reveal animation
+
+const observer= new IntersectionObserver((entries)=>{
+    entries.forEach((entry)=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add("ractive")
+        }
+    })
+},{
+    root:null,
+    rootMargin:"0px",
+    threshold:0.3
+})
+
+document.querySelectorAll(".reveal, .reveal-right, .reveal-left").forEach((el)=>{
+    observer.observe(el)
+})
