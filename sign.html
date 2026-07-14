@@ -113,7 +113,6 @@
             position: relative;
         }
 
-
         .inputbox input,
         .inputbox select {
             padding: 15px 30px;
@@ -121,6 +120,7 @@
             border-radius: 7px;
             background: white;
             border: 1px solid rgba(128, 128, 128, 0.308);
+            margin-bottom: 5px;
         }
 
         .inputbox input:focus {
@@ -137,6 +137,7 @@
             color: var(--ncolor);
 
         }
+
 
         .inputwrap p {
             font-size: 13px;
@@ -220,11 +221,12 @@
             color: white;
         }
 
-        .homebtn {
+         .homebtn {
             text-decoration: none;
             font-size: 15px;
             text-transform: capitalize;
             color: var(--ncolor);
+            margin-top: 20px;
         }
 
         .homebtn i {
@@ -343,11 +345,11 @@
 
     <div class="loginpage">
         <div class="section1">
-            <h1>Login</h1>
+            <h1>Sign Up</h1>
 
             <div class="login-header">
-                <p>Don't have an accout?</p>
-                <a href="sign.html">Create New Account</a>
+                <p>Already have an account?</p>
+                <a href="login.html">Login Here</a>
 
             </div>
 
@@ -365,47 +367,54 @@
                     <p></p>
                 </div>
 
-                <div class="inputwrap">
+                <div  class="inputwrap">
+                    <div class="inputbox">
+                        <span class="material-symbols-outlined callicon">call</span>
+                        <input type="text" id="name" placeholder="Enter Your Name">
+                    </div>
+                    <p></p>
+                </div>
+
+
+                <div  class="inputwrap">
+                    <div class="inputbox">
+                        <span class="material-symbols-outlined callicon">call</span>
+                        <input type="tell" id="number" placeholder="Enter Your Numbaer">
+                    </div>
+                    <p></p>
+                </div>
+
+                <div  class="inputwrap">
                     <div class="inputbox">
                         <span class="material-symbols-outlined callicon">email</span>
                         <input type="email" id="email" placeholder="Enter Your Email">
-                        <p></p>
                     </div>
                     <p></p>
                 </div>
 
-                <div class="inputwrap">
+                <div  class="inputwrap">
                     <div class="inputbox">
                         <span class="material-symbols-outlined callicon">visibility_off</span>
                         <input type="password" id="password" placeholder="Enter Your Email">
-                        <p></p>
                     </div>
                     <p></p>
                 </div>
 
-                <div class="box">
-                    <div>
-                        <div class="check">
-                            <input type="checkbox" id="checkbox"><label for="">Remember Me</label>
-                        </div>
-                        <p></p>
-                    </div>
-                    <a href="404.html" class="fotget">Forget Password?</a>
+                <div  class="inputwrap">
+                    <div class="inputbox">
+                    <span class="material-symbols-outlined callicon">visibility_off</span>
+                    <input type="password" id="conpassword" placeholder="Enter Your Email">
                 </div>
+                <p></p>
+                </div>
+
+
 
                 <button class="loginbtn">Login</button>
             </div>
 
-            <div class="loginfooter">
-                <p class="or">Or login with</p>
+              <a href="index.html" class="homebtn"><i class="fa-regular fa-house"></i> back to home</a>
 
-                <div class="footericons">
-                    <a href=""><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href=""><i class="fa-brands fa-whatsapp"></i></a>
-                </div>
-            </div>
-
-            <a href="index.html" class="homebtn"><i class="fa-regular fa-house"></i> back to home</a>
 
 
         </div>
@@ -413,10 +422,9 @@
         <div class="section2">
             <img src="./src/logo.webp" alt="Company Logo" class="logo">
 
-            <h1>Welcome Back</h1>
+            <h1>Start Your Journey</h1>
 
-            <p>Log in to book flights, track itineraries, and travel with confidence.</p>
-
+<p>Create your account to book flights, manage trips, and explore destinations around the world.</p>
         </div>
     </div>
 </body>
