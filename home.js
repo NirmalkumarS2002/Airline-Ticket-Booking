@@ -5,6 +5,10 @@ const to = document.querySelector("#to");
 const departure = document.querySelector("#departure");
 const passengers = document.querySelector("#passengers");
 
+departure.addEventListener("input", () => {
+    departure.value = departure.value.replace(/[A-Za-z\s]/g, "");
+});
+
 searchBtn.addEventListener("click", (e) => {
     e.preventDefault();
 

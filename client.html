@@ -896,78 +896,78 @@
         }
 
         .custom-select {
-    position: relative;
-    width: 100%;
-}
+            position: relative;
+            width: 100%;
+        }
 
-.select-btn {
-    height: 47px;
-    border: 1px solid #E4E1F1;
-    border-radius: 10px;
-    padding: 0 18px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    cursor: pointer;
-    background: white;
-    transition: .3s ease;
-}
+        .select-btn {
+            height: 47px;
+            border: 1px solid #E4E1F1;
+            border-radius: 10px;
+            padding: 0 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            background: white;
+            transition: .3s ease;
+        }
 
-.select-btn:hover {
-    border-color: #9147FF;
-}
+        .select-btn:hover {
+            border-color: #9147FF;
+        }
 
-.selected-text{
-    font-size: 13px;
-}
+        .selected-text {
+            font-size: 13px;
+        }
 
-.arrow {
-    color: #9147FF;
-    transition: .3s ease;
-}
+        .arrow {
+            color: #9147FF;
+            transition: .3s ease;
+        }
 
-.custom-select.active .arrow {
-    transform: rotate(180deg);
-}
+        .custom-select.active .arrow {
+            transform: rotate(180deg);
+        }
 
-.select-options {
-    position: absolute;
-    top: calc(100% + 8px);
-    width: 100%;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 10px 25px rgba(0,0,0,.08);
-    overflow: hidden;
+        .select-options {
+            position: absolute;
+            top: calc(100% + 8px);
+            width: 100%;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, .08);
+            overflow: hidden;
 
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
 
-    transition: .3s ease;
-    z-index: 100;
-}
+            transition: .3s ease;
+            z-index: 100;
+        }
 
-.custom-select.active .select-options {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
+        .custom-select.active .select-options {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
 
-.option {
-    padding: 14px 18px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: .3s ease;
-}
+        .option {
+            padding: 14px 18px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: .3s ease;
+        }
 
-.option:hover {
-    background: linear-gradient(90deg,#9147FF,#C84DFF);
-    color: white;
-}
+        .option:hover {
+            background: linear-gradient(90deg, #9147FF, #C84DFF);
+            color: white;
+        }
 
-.seachpanel{
-    overflow: visible !important;
-}
+        .seachpanel {
+            overflow: visible !important;
+        }
     </style>
 </head>
 
@@ -1275,7 +1275,7 @@
                     </div>
                     <div class="field">
                         <label>Departure Date</label>
-                        <input type="text" value="2026-07-20" placeholder="Date">
+                        <input type="text" value="2026-07-20" placeholder="Date" id="departure">
                     </div>
                     <div class="field">
                         <label>Passengers</label>
@@ -1367,7 +1367,7 @@
                     </div>
                     <div class="field">
                         <label>Date</label>
-                        <input type="text" value="2026-07-13">
+                        <input type="text" value="2026-07-13" id="dep">
                     </div>
                     <button class="d-btn errorpage">Track</button>
                 </div>
@@ -1600,29 +1600,38 @@
 
         //
         const passengerSelect = document.querySelector("#passengerSelect");
-const selectBtn = passengerSelect.querySelector(".select-btn");
-const selectedText = passengerSelect.querySelector(".selected-text");
-const options = passengerSelect.querySelectorAll(".option");
-const hiddenInput = document.querySelector("#passengers");
+        const selectBtn = passengerSelect.querySelector(".select-btn");
+        const selectedText = passengerSelect.querySelector(".selected-text");
+        const options = passengerSelect.querySelectorAll(".option");
+        const hiddenInput = document.querySelector("#passengers");
 
-selectBtn.addEventListener("click", () => {
-    passengerSelect.classList.toggle("active");
-});
+        selectBtn.addEventListener("click", () => {
+            passengerSelect.classList.toggle("active");
+        });
 
-options.forEach(option => {
-    option.addEventListener("click", () => {
-        selectedText.textContent = option.dataset.value;
-        hiddenInput.value = option.dataset.value;
+        options.forEach(option => {
+            option.addEventListener("click", () => {
+                selectedText.textContent = option.dataset.value;
+                hiddenInput.value = option.dataset.value;
 
-        passengerSelect.classList.remove("active");
-    });
-});
+                passengerSelect.classList.remove("active");
+            });
+        });
 
-document.addEventListener("click", (e) => {
-    if (!passengerSelect.contains(e.target)) {
-        passengerSelect.classList.remove("active");
-    }
-});
+        document.addEventListener("click", (e) => {
+            if (!passengerSelect.contains(e.target)) {
+                passengerSelect.classList.remove("active");
+            }
+        });
+
+        let dep = document.querySelector("#dep")
+        dep.addEventListener("input", () => {
+            dep.value = dep.value.replace(/[A-Za-z\s]/g, "");
+        });
+
+        departure.addEventListener("input", () => {
+            departure.value = departure.value.replace(/[A-Za-z\s]/g, "");
+        });
     </script>
 
 </body>
